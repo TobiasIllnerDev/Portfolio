@@ -94,6 +94,10 @@
   border: 1px solid $button-green;
   border-radius: 100%;
   font-size: 1.25rem;
+}
+
+.scroll-arrow-icon {
+  display: block;
   animation: scroll-arrow 1.5s ease-in-out infinite;
 }
 
@@ -166,7 +170,7 @@
 .ticker-track {
   width: max-content;
   display: flex;
-  animation: ticker-right 24s linear infinite;
+  animation: ticker-right 14s linear infinite;
   will-change: transform;
 }
 
@@ -195,7 +199,7 @@
 
 @keyframes ticker-right {
   from {
-    transform: translateX(-50%);
+    transform: translateX(50%);
   }
 
   to {
@@ -243,12 +247,5 @@
 
   .social-bar .side-line {
     height: 80px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .scroll-arrow,
-  .ticker-track {
-    animation: none;
   }
 }
