@@ -1,5 +1,10 @@
-* {
-    margin: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+@use "../styles/variables" as *;
+
+.background-color-class {
+  min-height: 100vh;
+  background: linear-gradient(
+    to top right,
+    $background-color 35%,
+    $button-green 160%
+  );
 }
