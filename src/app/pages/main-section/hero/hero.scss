@@ -1,0 +1,46 @@
+@use "../../../../styles/variables" as *;
+
+.header-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 316px 342px;
+
+    h2 {
+       color: white; 
+       font-family: "Fira Code", monospace;
+       line-height: 100%;
+       letter-spacing: 0%;
+       font-size: 2.5rem;
+    }
+
+    h1 {
+        color: white; 
+        font-family: "Karla", Arial, sans-serif;
+        font-size: 8rem;
+        font-weight: 700;
+        line-height: 100%;
+        letter-spacing: 0%;
+    }
+
+}
+
+.header-navigation {
+    display: flex;
+    gap: 48px;
+
+    a {
+        color: white;
+        text-decoration: none;
+        font-size: 2rem;
+        border: 1px solid white;
+        border-radius: 100px;
+        padding: 10px;
+        cursor: pointer;
+         
+        &:hover {
+            color: $button-green;
+        }
+    }
+}
