@@ -1,0 +1,79 @@
+.nav-section {
+    margin-left: 96px;
+    margin-top: 35px;
+}
+
+.nav-div {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+.language-switch {
+  position: relative;
+  display: inline-flex;
+  width: 84px;
+  height: 28px;
+  border: 1px solid #3dcfb6;
+  border-radius: 100px;
+  cursor: pointer;
+  overflow: hidden;
+  user-select: none;
+
+  input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  // Hintergrund nach rechts zu DE bewegen
+  input:checked ~ .switch-background {
+    transform: translateX(100%);
+  }
+
+  // Aktive Sprache weiß
+  input:not(:checked) ~ .en,
+  input:checked ~ .de {
+    color: white;
+  }
+
+  // Inaktive Sprache türkis
+  input:not(:checked) ~ .de,
+  input:checked ~ .en {
+    color: #3dcfb6;
+  }
+
+  // Sichtbarer Fokus bei Tastaturbedienung
+  &:has(input:focus-visible) {
+    outline: 2px solid white;
+    outline-offset: 3px;
+  }
+}
+
+.language-option {
+  width: 50%;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  font-size: 1rem;
+  transition: color 200ms ease;
+}
+
+.switch-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+  background-color: #3dcfb6;
+  border-radius: 100px;
+  transform: translateX(0);
+  transition: transform 200ms ease;
+}
