@@ -6,6 +6,7 @@
   height: 98px;
   margin: 0 auto;
   padding: 24px 96px;
+  font-family: "Fira Code", monospace;
 
   display: flex;
   align-items: center;
@@ -18,11 +19,43 @@
   gap: 24px;
 
   a {
+    position: relative;
     color: white;
-    font-family: monospace;
     font-size: 20px;
+    font-family: "Fira Code", monospace;
+    font-weight: 400;
     text-decoration: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: $button-green;
+
+      opacity: 0;
+      transform: translateX(-50%) scale(0);
+      transition:
+        opacity 150ms ease,
+        transform 150ms ease;
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+      
+    }
+    
+    &:hover {
+      color: $button-green;
+    }
   }
+  
 }
 
 
@@ -75,6 +108,8 @@
   z-index: 2;
   font-size: 1rem;
   transition: color 200ms ease;
+  font-family: "Fira Code", monospace;
+  font-weight: 700;
 }
 
 .switch-background {
