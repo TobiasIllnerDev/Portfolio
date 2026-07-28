@@ -6,7 +6,29 @@ img {
 }
 
 .skillset-section {
+    display: flex;
     min-height: 100vh;
     padding: 100px;
-    background-color: $b-color;
+    background-image: radial-gradient(circle 200px at 10% 50%, $button-green -200%, $b-color);
+}
+
+.skillset-header-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.skillset-header-text {
+  color: $button-green;
+  font-family: "Karla", sans-serif;
+  font-size: 1.5rem;
+  font-style: bold;
+  font-weight: 700;
+}
+
+.skillset-text-area {
+  background-color: $green-transparent;
+  width: 520px;
+  height: 550px;
+  border: solid 1px $button-green;
+  border-radius: 10px;
 }
