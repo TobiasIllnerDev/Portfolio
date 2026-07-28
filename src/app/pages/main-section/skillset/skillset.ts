@@ -54,7 +54,7 @@ export class Skillset {
     },
     {
       name:'C#',
-      img:'icons/c#-logo.png'
+      img:'icons/csharp-logo.png'
     }
   ]
 }

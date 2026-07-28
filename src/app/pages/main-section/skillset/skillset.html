@@ -1,1 +1,12 @@
-<section></section>
+<section class="skillset-section">
+  <div>
+    <p></p>
+    <div></div>
+  </div>
+  <div>
+    @for (icon of icons; track icon.name) {
+      <img [src]="icon.img" [alt]="icon.name" />
+      <p>icon.name</p>
+    }
+  </div>
+</section>

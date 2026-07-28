@@ -1,0 +1,12 @@
+@use "../../../../styles/variables" as *;
+
+img {
+  width: 64px;
+  height: 64px;
+}
+
+.skillset-section {
+    min-height: 100vh;
+    padding: 100px;
+    background-color: $b-color;
+}
