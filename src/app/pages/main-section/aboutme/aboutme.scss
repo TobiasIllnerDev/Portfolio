@@ -1,23 +1,123 @@
 @use "../../../../styles/variables" as *;
 
 .about-me-section {
-    background-color: $background-color;
-
+  background-color: $background-color;
+  padding: 140px 32px;
 }
 
-.about-me-box {
-   max-width: 1250px;
-   display: flex;
-   align-items: center;
-   flex-direction: row;
-   justify-content: space-between;
-   gap: 90px;
+.about-me-container {
+  max-width: 1232px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 568px 568px;
+  align-items: start;
+  justify-content: space-between;
+  gap: 96px;
 }
 
 .about-me-img {
-    img {
-        height: 550px;
-        width: 550px;
-        border-radius: 100px;
-    }
+  img {
+    display: block;
+    width: 568px;
+    height: 568px;
+    object-fit: cover;
+    border-radius: 30px;
+    filter: grayscale(100%);
+  }
+}
+
+.about-me-content {
+  margin-top: 100px;
+}
+
+.about-me-label {
+  margin: 0 0 20px;
+  color: $button-green;
+  font-family: "Karla", sans-serif;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.about-me-card {
+  width: 568px;
+  height: 540px;
+  padding: 32px;
+  color: white;
+  background-color: rgba(61, 207, 182, 0.1);
+  border: 1px solid $button-green;
+  border-radius: 30px;
+
+  h2 {
+    margin: 0 0 30px;
+    color: $button-green;
+    font-family: "Fira Code", monospace;
+    font-size: 64px;
+    line-height: 1.1;
+  }
+}
+
+.about-me-intro {
+  margin: 0 0 28px;
+  font-family: "Karla", sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.about-me-details {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  margin-left: -16px;
+}
+
+.about-me-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+
+  img {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: "Karla", sans-serif;
+    font-size: 18px;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 1250px) {
+  .about-me-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-me-img img,
+  .about-me-card {
+    width: 100%;
+  }
+
+  .about-me-img img {
+    height: auto;
+    aspect-ratio: 1;
+  }
+}
+
+@media (max-width: 850px) {
+  .about-me-container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .about-me-content {
+    margin-top: 0;
+  }
+
+  .about-me-card h2 {
+    font-size: 3rem;
+  }
 }
