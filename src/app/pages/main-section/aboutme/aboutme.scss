@@ -1,0 +1,23 @@
+@use "../../../../styles/variables" as *;
+
+.about-me-section {
+    background-color: $background-color;
+
+}
+
+.about-me-box {
+   max-width: 1250px;
+   display: flex;
+   align-items: center;
+   flex-direction: row;
+   justify-content: space-between;
+   gap: 90px;
+}
+
+.about-me-img {
+    img {
+        height: 550px;
+        width: 550px;
+        border-radius: 100px;
+    }
+}
