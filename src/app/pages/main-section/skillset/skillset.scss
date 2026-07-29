@@ -33,21 +33,26 @@ img {
 }
 
 .skill-icons {
-  margin: 96px 48px;
+  margin: 55px 96px;
+  width: 632px;
   align-self: flex-start;
+
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 72px 60px;
+  gap: 48px 72px;
   justify-items: center;
+
   color: white;
-  
 }
 
 .skill-icon {
   display: flex;
-  align-items: flex-start;
   flex-direction: column;
+  align-items: center; 
   text-align: center;
+  &:hover {
+    scale: 1.1;
+  }
 
   p {
     margin: 12px 0 0;
