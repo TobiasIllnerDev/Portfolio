@@ -7,8 +7,9 @@ img {
 
 .skillset-section {
     display: flex;
-    min-height: 100vh;
-    padding: 100px;
+    padding-top: 0px;
+    padding-left: 96px;
+    min-height: 695px;
     background-image: radial-gradient(circle 200px at 10% 50%, $button-green -200%, $b-color);
 }
 
@@ -29,7 +30,56 @@ img {
   width: 520px;
   height: 550px;
   border: solid 1px $button-green;
-  border-radius: 10px;
+  border-radius: 30px;
+  padding: 32px;
+
+  h2 {
+    font-family: "Fira Code", monospace;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -3%;
+    font-size: 4rem;
+    color: $button-green;
+  }
+
+  p{
+    font-family: "Karla", sans-serif;
+    font-size: 18px;
+    color: white;
+    line-height: 120%;
+    letter-spacing: 0%;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-weight: bold;
+    font-family: "Fira Code", monospace;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: white;
+
+    span {
+      color: $button-green;
+    }
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 100px;
+    font-family: "Karla", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    padding: 13px 24px;
+  }
+}
+
+.skillset-div-text {
+  margin-bottom: 60px;
 }
 
 .skill-icons {
@@ -62,5 +112,10 @@ img {
 
   p {
     margin: 12px 0 0;
+    font-family: "Fira Code", monospace;
+    letter-spacing: -3%;
+    line-height: 120%;
+    font-size: 1.125rem;
+    font-weight: 400;
   }
 }
