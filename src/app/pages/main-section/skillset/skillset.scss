@@ -21,7 +21,6 @@ img {
   color: $button-green;
   font-family: "Karla", sans-serif;
   font-size: 1.5rem;
-  font-style: bold;
   font-weight: 700;
 }
 
@@ -34,12 +33,23 @@ img {
 }
 
 .skill-icons {
-  padding-left: 96px;
-  padding-right: 96px;
-  padding-top: 48px;
+  margin: 96px 48px;
+  align-self: flex-start;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 50px 60px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 72px 60px;
+  justify-items: center;
   color: white;
+  
+}
+
+.skill-icon {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
   text-align: center;
+
+  p {
+    margin: 12px 0 0;
+  }
 }
