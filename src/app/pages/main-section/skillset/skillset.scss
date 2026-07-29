@@ -6,11 +6,19 @@ img {
 }
 
 .skillset-section {
-    display: flex;
-    padding-top: 0px;
-    padding-left: 96px;
-    min-height: 695px;
-    background-image: radial-gradient(circle 200px at 10% 50%, $button-green -200%, $b-color);
+  min-height: 695px;
+  padding: 0 32px;
+  background-image: radial-gradient(circle 200px at 10% 50%, $button-green -200%, $b-color);
+}
+
+.skillset-container {
+  width: 100%;
+  max-width: 1248px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 520px 632px;
+  gap: 96px;
+  align-items: start;
 }
 
 .skillset-header-div {
@@ -83,9 +91,8 @@ img {
 }
 
 .skill-icons {
-  margin: 55px 96px;
+  margin-top: 55px;
   width: 632px;
-  align-self: flex-start;
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
