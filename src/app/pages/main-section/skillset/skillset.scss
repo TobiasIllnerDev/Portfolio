@@ -32,3 +32,14 @@ img {
   border: solid 1px $button-green;
   border-radius: 10px;
 }
+
+.skill-icons {
+  padding-left: 96px;
+  padding-right: 96px;
+  padding-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 50px 60px;
+  color: white;
+  text-align: center;
+}
