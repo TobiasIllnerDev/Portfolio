@@ -1,28 +1,56 @@
+@use "../../../../styles/variables" as *;
+
+.projects {
+    background-color: $b-color;
+    min-height: 580px;
+    padding: 0 32px;
+}
+
+.projects-container {
+    width: 100%;
+    max-width: 1248px;
+    margin: 0 auto;
+    
+}
+
+.projects_header {
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-header-text {
+    color: $button-green;
+    font-family: "Karla", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
 .project {
-  position: relative;
-  display: block;
+    position: relative;
+    display: block;
+  
 
-  &__preview {
-    position: absolute;
-    left: calc(100% + 72px);
-    top: 50%;
+    &__preview {
+        position: absolute;
+        left: calc(100% + 72px);
+        top: 50%;
 
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateY(-50%) scale(0.95);
-    transition:
-      opacity 180ms ease,
-      transform 180ms ease,
-      visibility 180ms;
-  }
-
-  &:hover,
-  &:focus-visible {
-    .project__preview {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(-50%) scale(1);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-50%) scale(0.95);
+        transition:
+        opacity 180ms ease,
+        transform 180ms ease,
+        visibility 180ms;
     }
-  }
+
+    &:hover,
+    &:focus-visible {
+        .project__preview {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(-50%) scale(1);
+        }
+    }
 }
