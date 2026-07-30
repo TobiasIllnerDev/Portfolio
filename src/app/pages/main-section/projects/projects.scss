@@ -2,8 +2,7 @@
 
 .projects {
     background-color: $b-color;
-    min-height: 580px;
-    padding: 0 32px;
+    min-height: 580px;    
 }
 
 .projects-container {
@@ -16,6 +15,8 @@
 .projects_header {
     display: flex;
     flex-direction: column;
+    gap: 20px;
+    
 }
 
 .projects-header-text {
@@ -23,6 +24,7 @@
     font-family: "Karla", sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
+    padding-top: 20px;
 }
 
 .project {
