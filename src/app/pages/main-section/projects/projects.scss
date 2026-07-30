@@ -1,0 +1,28 @@
+.project {
+  position: relative;
+  display: block;
+
+  &__preview {
+    position: absolute;
+    left: calc(100% + 72px);
+    top: 50%;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-50%) scale(0.95);
+    transition:
+      opacity 180ms ease,
+      transform 180ms ease,
+      visibility 180ms;
+  }
+
+  &:hover,
+  &:focus-visible {
+    .project__preview {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-50%) scale(1);
+    }
+  }
+}
