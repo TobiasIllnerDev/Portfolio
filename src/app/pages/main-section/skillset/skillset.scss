@@ -35,15 +35,23 @@ img {
   font-family: "Karla", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
+  margin: 0 0 24px;
 }
 
 .skillset-text-area {
   background-color: $green-transparent;
   width: 520px;
-  height: 550px;
+  min-height: 550px;
+  height: auto;
   border: solid 1px $button-green;
   border-radius: 30px;
   padding: 32px;
+
+  h2,
+  h3,
+  p {
+    margin: 0;
+  }
 
   h2 {
     font-family: "Fira Code", monospace;
@@ -51,6 +59,7 @@ img {
     line-height: 100%;
     letter-spacing: -3%;
     font-size: 4rem;
+    margin-bottom: 40px;
     color: $button-green;
   }
 
@@ -70,6 +79,7 @@ img {
     line-height: 120%;
     letter-spacing: 0%;
     color: white;
+    margin: 32px 0 16px;
 
     span {
       color: $button-green;
