@@ -8,7 +8,11 @@ img {
 .skillset-section {
   min-height: 695px;
   padding: 0 32px;
-  background-image: radial-gradient(circle 300px at 5% 50%, $button-green -200%, $b-color);
+  background-image: radial-gradient(
+  circle 300px at calc(50% - 648px) 50%,
+  $button-green -200%,
+  $b-color
+);
 }
 
 .skillset-container {
