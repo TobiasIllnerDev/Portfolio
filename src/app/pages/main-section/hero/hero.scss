@@ -68,6 +68,38 @@
   }
 }
 
+.talk-button {
+  span {
+    display: inline-block;
+    white-space: nowrap;
+    will-change: transform;
+  }
+
+  &:hover span,
+  &:focus-visible span {
+    animation: talk-text-slide 3s ease-in-out;
+  }
+}
+
+@keyframes talk-text-slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  20%,
+  66.66% {
+    transform: translateX(calc(-100% - 48px));
+  }
+
+  66.67% {
+    transform: translateX(calc(100% + 48px));
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .scroll-hint,
 .social-bar {
   position: absolute;
