@@ -16,6 +16,22 @@
 }
 
 .about-me-img {
+  position: relative;
+  width: fit-content;
+  isolation: isolate;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 30px 48px -30px -46px;
+    z-index: -1;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent 0 20px,
+      $button-green 20px 21px
+    );
+  }
+
   img {
     display: block;
     width: 568px;
