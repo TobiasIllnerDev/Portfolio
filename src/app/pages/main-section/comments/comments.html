@@ -5,9 +5,18 @@
     @if (comments.length > 0) {
       <div class="comments-slider" role="region" aria-label="Comments from colleagues">
         <div class="comments-slider__viewport">
-          <div class="comments-slider__track" [style.--active-index]="activeIndex">
-            @for (comment of comments; track comment.id; let index = $index) {
-              <article class="comment-card" [class.comment-card--active]="index === activeIndex">
+          <div
+            class="comments-slider__track"
+            [class.comments-slider__track--without-transition]="!isTransitionEnabled"
+            [style.--track-index]="trackIndex"
+            (transitionend)="handleTransitionEnd($event)"
+          >
+            @for (comment of sliderComments; track $index; let index = $index) {
+              <article
+                class="comment-card"
+                [class.comment-card--active]="index === trackIndex"
+                [attr.aria-hidden]="index === trackIndex ? null : 'true'"
+              >
                 <blockquote>
                   <p>{{ comment.text }}</p>
                 </blockquote>
