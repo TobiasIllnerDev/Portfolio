@@ -2,22 +2,21 @@
 
 .projects {
     background-color: $b-color;
-    padding: 20px 32px 0;
-    min-height: 580px;    
+    padding: 60px 32px 96px;
+    min-height: 700px;
+    overflow-x: clip;
 }
 
 .projects-container {
     width: 100%;
     max-width: 1248px;
     margin: 0 auto;
-    
 }
 
-.projects_header {
+.projects__header {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    
 }
 
 .projects-header-text {
@@ -26,8 +25,7 @@
     font-family: "Karla", sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 0;
 }
 
 .projects-text-area {
@@ -51,32 +49,143 @@
   }
 }
 
+.projects__list {
+    // 880px project list + 72px gap + 296px preview = 1248px container.
+    width: calc(100% - 368px);
+    max-width: 880px;
+    margin-top: 40px;
+}
+
 .project {
     position: relative;
     display: block;
-  
+    color: white;
+    text-decoration: none;
+    border-top: 1px solid $button-green;
+    border-bottom: 1px solid $button-green;
+
+    &__info {
+        min-height: 110px;
+        padding: 24px 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+        transition: background-color 180ms ease;
+
+        h3,
+        p {
+            margin: 0;
+        }
+
+        h3 {
+            font-family: "Fira Code", monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        span {
+            color: $button-green;
+        }
+    }
+
+    &__technologies {
+        font-family: "Karla", sans-serif;
+        font-size: 1.125rem;
+        text-align: right;
+    }
 
     &__preview {
         position: absolute;
         left: calc(100% + 72px);
         top: 50%;
-
+        width: 296px;
+        height: 192px;
+        margin: 0;
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
         transform: translateY(-50%) scale(0.95);
+        isolation: isolate;
         transition:
         opacity 180ms ease,
         transform 180ms ease,
         visibility 180ms;
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 20px -20px -20px 20px;
+            z-index: -1;
+            background: repeating-linear-gradient(
+                135deg,
+                transparent 0 8px,
+                $button-green 8px 9px
+            );
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 16px;
+        }
     }
 
     &:hover,
     &:focus-visible {
+        .project__info {
+            background-color: $green-transparent;
+        }
+
         .project__preview {
         opacity: 1;
         visibility: visible;
         transform: translateY(-50%) scale(1);
         }
+    }
+}
+
+@media (max-width: 1100px) {
+    .projects__list {
+        width: calc(100% - 312px);
+    }
+
+    .project__preview {
+        left: calc(100% + 32px);
+        width: 280px;
+    }
+}
+
+@media (max-width: 800px) {
+    .projects {
+        padding: 48px 24px 72px;
+        min-height: auto;
+    }
+
+    .projects-text-area h2 {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+    }
+
+    .projects__list {
+        width: 100%;
+    }
+
+    .project__info {
+        padding: 20px 16px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .project__technologies {
+        text-align: left;
+    }
+
+    .project__preview {
+        display: none;
     }
 }
