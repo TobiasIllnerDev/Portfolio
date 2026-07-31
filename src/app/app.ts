@@ -5,10 +5,11 @@ import { Hero } from './pages/main-section/hero/hero';
 import { Aboutme } from './pages/main-section/aboutme/aboutme';
 import { Skillset } from './pages/main-section/skillset/skillset';
 import { Projects } from './pages/main-section/projects/projects';
+import { Comments } from './pages/main-section/comments/comments';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Header,Hero, Aboutme, Skillset,Projects],
+  imports: [RouterOutlet,Header,Hero, Aboutme, Skillset,Projects,Comments],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

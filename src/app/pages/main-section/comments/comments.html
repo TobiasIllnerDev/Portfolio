@@ -1,1 +1,52 @@
-<p>comments works!</p>
+<section class="comments-section">
+  <div class="comments-container">
+    <h2>What my colleagues say about me</h2>
+
+    @if (comments.length > 0) {
+      <div class="comments-slider" role="region" aria-label="Comments from colleagues">
+        <div class="comments-slider__viewport">
+          <div class="comments-slider__track" [style.--active-index]="activeIndex">
+            @for (comment of comments; track comment.id; let index = $index) {
+              <article class="comment-card" [class.comment-card--active]="index === activeIndex">
+                <blockquote>
+                  <p>{{ comment.text }}</p>
+                </blockquote>
+
+                <p class="comment-card__author">{{ comment.author }} – {{ comment.role }}</p>
+              </article>
+            }
+          </div>
+        </div>
+
+        @if (comments.length > 1) {
+          <div class="comments-slider__navigation">
+            <button
+              type="button"
+              aria-label="Show previous comment"
+              (click)="showPreviousComment()"
+            >
+              ←
+            </button>
+
+            <div class="comments-slider__dots">
+              @for (comment of comments; track comment.id; let index = $index) {
+                <button
+                  type="button"
+                  class="comments-slider__dot"
+                  [class.comments-slider__dot--active]="index === activeIndex"
+                  [attr.aria-label]="'Show comment ' + (index + 1)"
+                  [attr.aria-current]="index === activeIndex ? 'true' : null"
+                  (click)="showComment(index)"
+                ></button>
+              }
+            </div>
+
+            <button type="button" aria-label="Show next comment" (click)="showNextComment()">
+              →
+            </button>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</section>
