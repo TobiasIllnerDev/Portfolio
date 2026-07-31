@@ -83,10 +83,18 @@
             font-size: 1.5rem;
             font-weight: 700;
             white-space: nowrap;
-        }
 
-        span {
-            color: $button-green;
+            span {
+                display: inline-block;
+                color: white;
+                opacity: 0;
+                visibility: hidden;
+                transform: translate(-6px, 3px);
+                transition:
+                    opacity 180ms ease,
+                    transform 180ms ease,
+                    visibility 180ms;
+            }
         }
     }
 
@@ -94,6 +102,10 @@
         font-family: "Karla", sans-serif;
         font-size: 1.125rem;
         text-align: right;
+
+        span {
+            color: $button-green;
+        }
     }
 
     &__preview {
@@ -145,6 +157,12 @@
         opacity: 1;
         visibility: visible;
         transform: translateY(-50%) scale(1);
+        }
+
+        .project__info h3 span {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(0, 3px);
         }
     }
 }
