@@ -199,6 +199,18 @@
   }
 }
 
+// Auf Widescreen-Displays wachsen die unteren Elemente proportional mit.
+// Bei 3400px entsprechen die Werte dem großen Figma-Frame.
+@media (min-width: 1441px) {
+  .scroll-hint {
+    height: clamp(315px, calc(14.03vw + 113px), 590px);
+  }
+
+  .social-bar .side-line {
+    height: clamp(185px, calc(11.99vw + 12px), 420px);
+  }
+}
+
 .ticker {
   position: absolute;
   z-index: 4;
@@ -209,6 +221,12 @@
   background-color: rgba(255, 255, 255, 0.12);
   transform: rotate(-3deg);
   transform-origin: center;
+}
+
+@media (min-width: 1441px) {
+  .ticker {
+    bottom: clamp(40px, calc(13.27vw - 151px), 300px);
+  }
 }
 
 .ticker-track {
