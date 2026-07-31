@@ -19,7 +19,11 @@ export class Projects {
       description:
         'A responsive Pokédex that lets users search and explore Pokémon and their most important information.',
       image: 'images/Pokedex.png',
-      technologies: ['JavaScript', 'HTML', 'CSS'],
+      technologies: [
+        { name: 'JavaScript', icon: 'icons/javascript.svg' },
+        { name: 'HTML', icon: 'icons/html.svg' },
+        { name: 'CSS', icon: 'icons/css.svg' },
+      ],
     },
     sharkie: {
       number: '02',
@@ -27,7 +31,11 @@ export class Projects {
       description:
         'A browser-based jump-and-run game built with object-oriented JavaScript.',
       image: 'images/Sharki-projekt.png',
-      technologies: ['JavaScript', 'HTML', 'CSS'],
+      technologies: [
+        { name: 'JavaScript', icon: 'icons/javascript.svg' },
+        { name: 'HTML', icon: 'icons/html.svg' },
+        { name: 'CSS', icon: 'icons/css.svg' },
+      ],
     },
   };
 

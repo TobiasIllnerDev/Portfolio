@@ -50,8 +50,11 @@
             <p>{{ selectedProject.description }}</p>
 
             <div class="project-dialog__technologies">
-              @for (technology of selectedProject.technologies; track technology) {
-                <span>{{ technology }}</span>
+              @for (technology of selectedProject.technologies; track technology.name) {
+                <span>
+                  <img [src]="technology.icon" alt="" aria-hidden="true" />
+                  {{ technology.name }}
+                </span>
               }
             </div>
 
