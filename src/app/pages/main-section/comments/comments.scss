@@ -37,9 +37,28 @@ $transition-duration: 300ms;
     width: 100%;
 
     &__viewport {
-      width: 100%;
+      position: relative;
+
+      width: min(100%, 1440px);
+      margin-inline: auto;
       padding: 35px 0;
       overflow: hidden;
+
+      &::before {
+        content: "“";
+
+        position: absolute;
+        z-index: 2;
+        top: 5px;
+        left: calc(52% - var(--card-width) / 2 - 48px);
+
+        color: white;
+        font-family: Georgia, serif;
+        font-size: 130px;
+        font-weight: 700;
+        line-height: 1;
+        pointer-events: none;
+      }
     }
 
     &__track {
@@ -154,26 +173,20 @@ $transition-duration: 300ms;
     border: 1px solid $button-green;
     border-radius: 30px;
 
-    opacity: 0.35;
+    visibility: hidden;
+    opacity: 0;
     transform: scale(0.95);
 
     transition:
       opacity $transition-duration ease-in-out,
       transform $transition-duration ease-in-out,
-      background-color $transition-duration ease-in-out;
+      background-color $transition-duration ease-in-out,
+      visibility 0s linear $transition-duration;
 
-    &::before {
-      content: "“";
-
-      position: absolute;
-      top: -37px;
-      left: -48px;
-
-      color: white;
-      font-family: Georgia, serif;
-      font-size: 110px;
-      font-weight: 700;
-      line-height: 1;
+    &--visible {
+      visibility: visible;
+      opacity: 0.35;
+      transition-delay: 0s;
     }
 
     &--active {
@@ -230,19 +243,20 @@ $transition-duration: 300ms;
     .comments-slider {
       --card-width: calc(100vw - 40px);
       --card-gap: 24px;
+
+      &__viewport {
+        &::before {
+          top: 5px;
+          left: calc(50% - var(--card-width) / 2 + 12px);
+          font-size: 90px;
+        }
+      }
     }
 
     .comment-card {
       min-height: 300px;
       padding: 45px 24px 30px;
       border-radius: 24px;
-
-      &::before {
-        top: -30px;
-        left: 12px;
-
-        font-size: 90px;
-      }
 
       blockquote {
         p {

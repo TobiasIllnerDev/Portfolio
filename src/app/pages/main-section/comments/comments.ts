@@ -36,7 +36,7 @@ export class Comments {
   ];
 
   activeIndex = 0;
-  trackIndex = this.comments.length > 1 ? 1 : 0;
+  trackIndex = this.comments.length > 1 ? 2 : 0;
   isAnimating = false;
   isTransitionEnabled = true;
 
@@ -45,10 +45,18 @@ export class Comments {
       return this.comments;
     }
 
-    const firstComment = this.comments[0];
-    const lastComment = this.comments[this.comments.length - 1];
+    const commentCount = this.comments.length;
+    const leadingComments = [
+      this.comments[(commentCount - 2 + commentCount) % commentCount],
+      this.comments[commentCount - 1],
+    ];
+    const trailingComments = [this.comments[0], this.comments[1 % commentCount]];
 
-    return [lastComment, ...this.comments, firstComment];
+    return [...leadingComments, ...this.comments, ...trailingComments];
+  }
+
+  isVisibleSlide(index: number): boolean {
+    return Math.abs(index - this.trackIndex) <= 1;
   }
 
   showPreviousComment(): void {
@@ -82,7 +90,7 @@ export class Comments {
     this.isAnimating = true;
     this.isTransitionEnabled = true;
     this.activeIndex = index;
-    this.trackIndex = index + 1;
+    this.trackIndex = index + 2;
   }
 
   handleTransitionEnd(event: TransitionEvent): void {
@@ -90,14 +98,15 @@ export class Comments {
       return;
     }
 
-    const lastTrackIndex = this.comments.length + 1;
+    const firstCloneIndex = 1;
+    const lastCloneIndex = this.comments.length + 2;
 
-    if (this.trackIndex === 0) {
+    if (this.trackIndex === firstCloneIndex) {
       this.isTransitionEnabled = false;
-      this.trackIndex = this.comments.length;
-    } else if (this.trackIndex === lastTrackIndex) {
+      this.trackIndex = this.comments.length + 1;
+    } else if (this.trackIndex === lastCloneIndex) {
       this.isTransitionEnabled = false;
-      this.trackIndex = 1;
+      this.trackIndex = 2;
     }
 
     this.isAnimating = false;
