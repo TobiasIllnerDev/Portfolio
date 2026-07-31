@@ -19,6 +19,8 @@ export class Projects {
       description:
         'A responsive Pokédex that lets users search and explore Pokémon and their most important information.',
       image: 'images/Pokedex.png',
+      githubUrl: 'https://github.com/TobiasIllnerDev/pokedex',
+      liveUrl: 'https://tobiasillner.developerakademie.net/pokedex/index.html',
       technologies: [
         { name: 'JavaScript', icon: 'icons/javascript.svg' },
         { name: 'HTML', icon: 'icons/html.svg' },
@@ -31,6 +33,8 @@ export class Projects {
       description:
         'A browser-based jump-and-run game built with object-oriented JavaScript.',
       image: 'images/Sharki-projekt.png',
+      githubUrl: 'https://github.com/TobiasIllnerDev/Sharkie',
+      liveUrl: 'https://tobiasillner.developerakademie.net/sharkie/index.html',
       technologies: [
         { name: 'JavaScript', icon: 'icons/javascript.svg' },
         { name: 'HTML', icon: 'icons/html.svg' },

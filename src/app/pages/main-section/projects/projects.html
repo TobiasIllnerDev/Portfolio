@@ -59,8 +59,12 @@
             </div>
 
             <div class="project-dialog__links">
-              <a href="#" (click)="$event.preventDefault()">GitHub <span>↗</span></a>
-              <a href="#" (click)="$event.preventDefault()">Live Test <span>↗</span></a>
+              <a [href]="selectedProject.githubUrl" target="_blank" rel="noopener noreferrer">
+                GitHub <span>↗</span>
+              </a>
+              <a [href]="selectedProject.liveUrl" target="_blank" rel="noopener noreferrer">
+                Live Test <span>↗</span>
+              </a>
             </div>
           </div>
 
