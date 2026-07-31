@@ -47,27 +47,18 @@
     aria-label="Available for remote work, Fullstack Developer, Based in Braunschweig"
   >
     <div class="ticker-track">
-      <div class="ticker-content">
-        <span>Available for remote work</span>
-        <span aria-hidden="true">•</span>
-        <span>Fullstack Developer</span>
-        <span aria-hidden="true">•</span>
-        <span>Based in Brunswick.</span>
-        <span aria-hidden="true">•</span>
-        <span>Open to work</span>
-        <span aria-hidden="true">•</span>
-      </div>
-
-      <div class="ticker-content" aria-hidden="true">
-        <span>Available for remote work</span>
-        <span>•</span>
-        <span>Fullstack Developer</span>
-        <span>•</span>
-        <span>Based in Brunswick</span>
-        <span>•</span>
-        <span>Open to work</span>
-        <span>•</span>
-      </div>
+      @for (copy of tickerCopies; track copy) {
+        <div class="ticker-content" aria-hidden="true">
+          @for (group of tickerGroups; track group) {
+            <div class="ticker-group">
+              @for (item of tickerItems; track item) {
+                <span>{{ item }}</span>
+                <span class="ticker-separator" aria-hidden="true">•</span>
+              }
+            </div>
+          }
+        </div>
+      }
     </div>
   </div>
 </section>
