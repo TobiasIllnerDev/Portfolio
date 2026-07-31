@@ -12,7 +12,7 @@
     </div>
 
     <div class="projects__list">
-      <a class="project" href="#" aria-label="Projekt Pokedex öffnen">
+      <button type="button" class="project" (click)="openProject('pokedex')">
         <div class="project__info">
           <h3>Pokedex <span aria-hidden="true">↗</span></h3>
           <p class="project__technologies">HTML <span>|</span> CSS <span>|</span> Javascript</p>
@@ -20,9 +20,9 @@
         <figure class="project__preview">
           <img src="images/Pokedex.png" alt="Vorschau des Projekts Pokedex" />
         </figure>
-      </a>
+      </button>
 
-      <a class="project" href="#" aria-label="Projekt Sharkie öffnen">
+      <button type="button" class="project" (click)="openProject('sharkie')">
         <div class="project__info">
           <h3>Sharkie <span aria-hidden="true">↗</span></h3>
           <p class="project__technologies">HTML <span>|</span> CSS <span>|</span> Javascript</p>
@@ -30,7 +30,52 @@
         <figure class="project__preview">
           <img src="images/Sharki-projekt.png" alt="Vorschau des Projekts Sharkie" />
         </figure>
-      </a>
+      </button>
+
+      <dialog
+        #projectDialog
+        class="project-dialog"
+        (click)="closeOnBackdrop($event)"
+      >
+        <button
+          class="project-dialog__close"
+          type="button"
+          (click)="closeProject()"
+          aria-label="Dialog schließen"
+        >
+          ×
+        </button>
+
+        <div class="project-dialog__content">
+          <div class="project-dialog__details">
+            <span class="project-dialog__number">{{ selectedProject.number }}</span>
+            <h2>{{ selectedProject.title }}</h2>
+            <h3>What is this project about?</h3>
+            <p>{{ selectedProject.description }}</p>
+
+            <div class="project-dialog__technologies">
+              @for (technology of selectedProject.technologies; track technology) {
+                <span>{{ technology }}</span>
+              }
+            </div>
+
+            <div class="project-dialog__links">
+              <a href="#" (click)="$event.preventDefault()">GitHub <span>↗</span></a>
+              <a href="#" (click)="$event.preventDefault()">Live Test <span>↗</span></a>
+            </div>
+          </div>
+
+          <div class="project-dialog__visual">
+            <img
+              [src]="selectedProject.image"
+              [alt]="'Vorschau des Projekts ' + selectedProject.title"
+            />
+            <button type="button" class="project-dialog__next" (click)="showNextProject()">
+              Next project <span>→</span>
+            </button>
+          </div>
+        </div>
+      </dialog>
       <!-- Weitere Projekte genauso aufbauen -->
     </div>
   </div>
