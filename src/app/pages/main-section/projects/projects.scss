@@ -70,6 +70,8 @@
     cursor: pointer;
     border-top: 1px solid $button-green;
     border-bottom: 1px solid $button-green;
+    border-left: none;
+    border-right: none;
 
     &__info {
         min-height: 110px;
@@ -297,13 +299,20 @@
             transition: color 180ms ease, border-color 180ms ease;
 
             span {
+                display: inline-block;
                 color: $button-green;
+                transform-origin: center;
+                transition: scale 180ms ease;
             }
 
             &:hover,
             &:focus-visible {
                 color: $button-green;
                 border-color: $button-green;
+
+                span {
+                    scale: 1.2;
+                }
             }
         }
     }
@@ -340,9 +349,14 @@
             transition: transform 180ms ease;
         }
 
+        &:hover {
+            color: white;
+        }
+
         &:hover span,
         &:focus-visible span {
             transform: translateX(8px);
+            color: $button-green;
         }
     }
 }

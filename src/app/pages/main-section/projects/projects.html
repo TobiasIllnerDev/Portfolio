@@ -32,11 +32,7 @@
         </figure>
       </button>
 
-      <dialog
-        #projectDialog
-        class="project-dialog"
-        (click)="closeOnBackdrop($event)"
-      >
+      <dialog #projectDialog class="project-dialog" (click)="closeOnBackdrop($event)">
         <button
           class="project-dialog__close"
           type="button"
