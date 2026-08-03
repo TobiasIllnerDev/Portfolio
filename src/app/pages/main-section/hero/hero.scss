@@ -6,7 +6,8 @@
 
 .hero-section {
   position: relative;
-  min-height: calc(100svh - 98px);
+  height: 802px;
+  min-height: 0;
   padding: 48px 120px 150px;
   display: grid;
   place-items: center;
