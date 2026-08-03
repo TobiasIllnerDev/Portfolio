@@ -50,7 +50,6 @@
 }
 
 .projects__list {
-    // 880px project list + 72px gap + 296px preview = 1248px container.
     width: calc(100% - 368px);
     max-width: 880px;
     margin-top: 40px;

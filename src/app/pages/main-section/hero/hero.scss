@@ -270,17 +270,6 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .scroll-arrow-icon {
-    animation: none;
-  }
-
-  .talk-button:hover span,
-  .talk-button:focus-visible span {
-    animation: none;
-  }
-}
-
 @media (max-width: 800px) {
   .hero-section {
     min-height: calc(100svh - 82px);
