@@ -1,7 +1,7 @@
 @use "../styles/variables" as *;
 
 .background-color-class {
-  height: 900px;
+  height: 100vh;
   background: linear-gradient(
     to top right,
     $b-color 35%,

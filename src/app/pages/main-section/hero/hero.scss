@@ -6,7 +6,7 @@
 
 .hero-section {
   position: relative;
-  height: 802px;
+  height: calc(100vh - 98px);
   min-height: 0;
   padding: 48px 120px 150px;
   display: grid;
@@ -273,7 +273,8 @@
 
 @media (max-width: 800px) {
   .hero-section {
-    min-height: calc(100svh - 82px);
+    height: calc(100vh - 98px);
+    min-height: 0;
     padding: 40px 24px 120px;
   }
 
