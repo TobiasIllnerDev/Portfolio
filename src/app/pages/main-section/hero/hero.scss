@@ -187,8 +187,6 @@
   margin-top: 8px;
 }
 
-// Ab 1440px bleiben beide Seitenleisten an den Kanten des
-// zentrierten 1440px-Layouts, statt weiter nach außen zu wandern.
 @media (min-width: 1440px) {
   .scroll-hint {
     left: calc((100% - 1440px) / 2 + 96px);
@@ -199,8 +197,6 @@
   }
 }
 
-// Auf Widescreen-Displays wachsen die unteren Elemente proportional mit.
-// Bei 3400px entsprechen die Werte dem großen Figma-Frame.
 @media (min-width: 1441px) {
   .scroll-hint {
     height: clamp(315px, calc(14.03vw + 113px), 590px);
