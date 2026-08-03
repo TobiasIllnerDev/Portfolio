@@ -10,7 +10,7 @@ import { Contactme } from './pages/main-section/contactme/contactme';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Header,Hero, Aboutme, Skillset,Projects,Comments, Contactme],
+  imports: [RouterOutlet,Header,Hero, Aboutme, Skillset,Projects,Comments,Contactme],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
