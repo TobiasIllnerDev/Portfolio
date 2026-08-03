@@ -81,7 +81,7 @@
     display: flex;
     flex-direction: column;
     min-height: 131px;
-    padding: 30px 32px 23px;
+    padding: 35px 32px 18px;
     border-top: 1px solid $button-green;
 
     label {
@@ -95,24 +95,28 @@
     input,
     textarea {
       width: 100%;
-      min-width: 0;
-      margin: 3px 0 0;
+      margin: 8px 0 0;
       padding: 0;
       color: #ffffff;
       background: transparent;
       border: 0;
       outline: 0;
-      font: 1rem/1.3 "Karla", sans-serif;
+      font: 400 1.125rem/1.2 "Karla", sans-serif;
       resize: none;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.8);
+        opacity: 1;
+      }
     }
 
     input {
-      min-height: 18px;
+      min-height: 22px;
     }
 
     textarea {
-      height: 18px;
-      min-height: 18px;
+      height: 22px;
+      min-height: 22px;
       overflow: hidden;
     }
 
@@ -130,9 +134,15 @@
     color: #ec7b76;
     font-size: 1rem;
     line-height: 1.2;
+    visibility: hidden;
+  }
+
+  & > :has(:user-invalid) > &__error {
+    visibility: visible;
   }
 
   &__privacy {
+    min-height: 94px;
     padding-top: 44px;
     border-top: 1px solid $button-green;
 
@@ -210,8 +220,7 @@
     cursor: pointer;
     transition:
       color 180ms ease,
-      border-color 180ms ease,
-      background-color 180ms ease;
+      border-color 180ms ease;
 
     &:hover {
       color: $button-green;
@@ -223,6 +232,44 @@
       outline: 2px solid $button-green;
       outline-offset: 4px;
     }
+  }
+}
+
+.submit {
+    span {
+      display: inline-block;
+      white-space: nowrap;
+      will-change: transform;
+    }
+
+    &:hover span,
+    &:focus-visible span {
+      animation: talk-text-slide 3s ease-in-out;
+    }
+  }
+
+  @keyframes talk-text-slide {
+    0% {
+      transform: translateX(0);
+    }
+
+    20%,
+    66.66% {
+      transform: translateX(calc(-100% - 48px));
+    }
+
+    66.67% {
+      transform: translateX(calc(100% + 48px));
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+@media (min-width: 1600px) {
+  .contact__container {
+    zoom: 1.25;
   }
 }
 

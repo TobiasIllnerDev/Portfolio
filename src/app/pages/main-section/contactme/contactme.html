@@ -22,8 +22,10 @@
           id="contact-name"
           name="name"
           type="text"
+          placeholder="Your name goes here"
           autocomplete="name"
           aria-describedby="name-error"
+          minlength="2"
           required
         />
         <p class="contact-form__error" id="name-error">Oops! It seems your name is missing</p>
@@ -35,6 +37,7 @@
           id="contact-email"
           name="email"
           type="email"
+          placeholder="youremail@email.com"
           autocomplete="email"
           aria-describedby="email-error"
           required
@@ -48,7 +51,9 @@
           id="contact-message"
           name="message"
           rows="4"
+          placeholder="Hello Lukas, I am interested in..."
           aria-describedby="message-error"
+          minlength="10"
           required
         ></textarea>
         <p class="contact-form__error" id="message-error">What do you need to develop?</p>
@@ -71,7 +76,7 @@
         <p class="contact-form__error" id="privacy-error">Please accept the privacy policy.</p>
       </div>
 
-      <button type="submit">Say Hello ;)</button>
+      <button type="submit"><span>Say Hello</span></button>
     </form>
   </div>
 </section>
