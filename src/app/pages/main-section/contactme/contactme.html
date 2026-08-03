@@ -1,1 +1,77 @@
-<p>contactme works!</p>
+<section class="contact" id="contact">
+  <div class="contact__container">
+    <div class="contact__content">
+      <p class="contact__eyebrow">Contact me</p>
+      <h2>Let's work<br />together</h2>
+
+      <h3>Got a problem to solve?</h3>
+      <p>
+        Encourage people to contact you and describe what role you are interested in.<br />
+        Show that you will add value to their projects through your work.
+      </p>
+      <p>
+        Need a Frontend developer?
+        <a href="#contact-form">Let's talk!</a>
+      </p>
+    </div>
+
+    <form class="contact-form" id="contact-form" novalidate>
+      <div class="contact-form__field">
+        <label for="contact-name">What's your name?</label>
+        <input
+          id="contact-name"
+          name="name"
+          type="text"
+          autocomplete="name"
+          aria-describedby="name-error"
+          required
+        />
+        <p class="contact-form__error" id="name-error">Oops! It seems your name is missing</p>
+      </div>
+
+      <div class="contact-form__field">
+        <label for="contact-email">What's your email?</label>
+        <input
+          id="contact-email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          aria-describedby="email-error"
+          required
+        />
+        <p class="contact-form__error" id="email-error">Hoppla! your email is required</p>
+      </div>
+
+      <div class="contact-form__field">
+        <label for="contact-message">How can I help you?</label>
+        <textarea
+          id="contact-message"
+          name="message"
+          rows="4"
+          aria-describedby="message-error"
+          required
+        ></textarea>
+        <p class="contact-form__error" id="message-error">What do you need to develop?</p>
+      </div>
+
+      <div class="contact-form__privacy">
+        <div class="contact-form__consent">
+          <input
+            id="privacy-policy"
+            name="privacyPolicy"
+            type="checkbox"
+            aria-describedby="privacy-error"
+            required
+          />
+          <label for="privacy-policy">
+            I've read the <a href="#privacy-policy-page">privacy policy</a> and agree to the
+            processing of my data as outlined.
+          </label>
+        </div>
+        <p class="contact-form__error" id="privacy-error">Please accept the privacy policy.</p>
+      </div>
+
+      <button type="submit">Say Hello ;)</button>
+    </form>
+  </div>
+</section>
