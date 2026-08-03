@@ -48,21 +48,9 @@
       line-height: 1.25;
     }
 
-    a {
+    .contact__cta {
       color: $button-green;
       font-weight: 700;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-        text-underline-offset: 4px;
-      }
-
-      &:focus-visible {
-        border-radius: 2px;
-        outline: 2px solid $button-green;
-        outline-offset: 3px;
-      }
     }
   }
 
@@ -236,36 +224,38 @@
 }
 
 .submit {
-    span {
-      display: inline-block;
-      white-space: nowrap;
-      will-change: transform;
-    }
+  overflow: hidden;
 
-    &:hover span,
-    &:focus-visible span {
-      animation: talk-text-slide 3s ease-in-out;
-    }
+  span {
+    display: inline-block;
+    white-space: nowrap;
+    will-change: transform;
   }
 
-  @keyframes talk-text-slide {
-    0% {
-      transform: translateX(0);
-    }
-
-    20%,
-    66.66% {
-      transform: translateX(calc(-100% - 48px));
-    }
-
-    66.67% {
-      transform: translateX(calc(100% + 48px));
-    }
-
-    100% {
-      transform: translateX(0);
-    }
+  &:hover span,
+  &:focus-visible span {
+    animation: talk-text-slide 3s ease-in-out;
   }
+}
+
+@keyframes talk-text-slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  20%,
+  66.66% {
+    transform: translateX(calc(-100% - 48px));
+  }
+
+  66.67% {
+    transform: translateX(calc(100% + 48px));
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
 
 @media (min-width: 1600px) {
   .contact__container {
