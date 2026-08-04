@@ -150,6 +150,7 @@ img {
 }
 
 .skill-icon {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center; 
@@ -171,5 +172,87 @@ img {
     line-height: 120%;
     font-size: 1.125rem;
     font-weight: 400;
+  }
+}
+
+.learning-interest {
+  cursor: pointer;
+  border-radius: 8px;
+
+  &:focus-visible {
+    outline: 2px solid $button-green;
+    outline-offset: 8px;
+  }
+
+  &:hover,
+  &:focus {
+    .learning-tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -8px);
+    }
+  }
+}
+
+.learning-tooltip {
+  position: absolute;
+  z-index: 2;
+  left: calc(50% + 38px);
+  bottom: calc(100% - 14px);
+  width: 188px;
+  padding: 11px 14px 12px;
+  border-radius: 16px;
+  background-color: white;
+  color: $button-green;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 25%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, 0);
+  transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: calc(50% - 38px);
+    border: 14px solid transparent;
+    border-top-color: white;
+    transform: translateX(-50%);
+  }
+
+  > p {
+    margin: 0 0 9px;
+    color: $button-green;
+    font-family: "Karla", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 120%;
+  }
+}
+
+.learning-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(77%) sepia(35%) saturate(943%) hue-rotate(118deg) brightness(90%) contrast(88%);
+  }
+
+  span {
+    color: $button-green;
+    font-family: "Karla", sans-serif;
+    font-size: 0.75rem;
   }
 }

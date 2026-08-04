@@ -19,7 +19,25 @@
     </div>
     <div class="skill-icons">
       @for (icon of icons; track icon.name) {
-        <div class="skill-icon">
+        <div
+          class="skill-icon"
+          [class.learning-interest]="icon.isLearningInterest"
+          [attr.tabindex]="icon.isLearningInterest ? 0 : null"
+          [attr.aria-describedby]="icon.isLearningInterest ? 'learning-interest-tooltip' : null"
+        >
+          @if (icon.isLearningInterest) {
+            <div class="learning-tooltip" id="learning-interest-tooltip" role="tooltip">
+              <p>I have a special interest in learning</p>
+              <div class="learning-icons">
+                @for (learningIcon of learningInterests; track learningIcon.name) {
+                  <div>
+                    <img [src]="learningIcon.img" [alt]="learningIcon.name" />
+                    <span>{{ learningIcon.name }}</span>
+                  </div>
+                }
+              </div>
+            </div>
+          }
           <img [src]="icon.img" [alt]="icon.name" />
           <p>{{ icon.name }}</p>
         </div>

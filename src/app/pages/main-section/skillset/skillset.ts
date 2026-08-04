@@ -41,20 +41,28 @@ export class Skillset {
       img:'icons/Firebase.png'
     },
     {
-      name:'React',
-      img:'icons/React.png'
-    },
-    {
       name:'Python',
       img:'icons/Python.png'
     },
     {
-      name:'Django',
-      img:'icons/Django.png'
-    },
-    {
       name:'C#',
       img:'icons/csharp-logo.png'
+    },
+    {
+      name:'Growth Mindset',
+      img:'icons/Growth.svg',
+      isLearningInterest: true
     }
-  ]
+  ];
+
+  learningInterests = [
+    {
+      name: 'React',
+      img: 'icons/React.png'
+    },
+    {
+      name: 'Django',
+      img: 'icons/Django.png'
+    }
+  ];
 }
