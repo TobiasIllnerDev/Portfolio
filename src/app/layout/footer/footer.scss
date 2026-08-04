@@ -102,11 +102,39 @@
     justify-content: center;
     align-items: flex-start;
     a {
+        position: relative;
         text-decoration: none;
         color: white;
         font-family: "Karla", Arial, sans-serif;
         font-size: 1.125rem;
         line-height: 120%;
         letter-spacing: 0%;
+        transition: color 150ms ease;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -12px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: $button-green;
+            opacity: 0;
+            transform: translateY(-50%) scale(0);
+            transition:
+                opacity 150ms ease,
+                transform 150ms ease;
+        }
+
+        &:hover,
+        &:focus-visible {
+            color: $button-green;
+
+            &::before {
+                opacity: 1;
+                transform: translateY(-50%) scale(1);
+            }
+        }
     }
 }
