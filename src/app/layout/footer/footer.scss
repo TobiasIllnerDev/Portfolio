@@ -92,6 +92,21 @@
         font-size: 1.125rem;
         line-height: 120%;
         letter-spacing: 0%;
-        
+    }
+}
+
+.right-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: flex-start;
+    a {
+        text-decoration: none;
+        color: white;
+        font-family: "Karla", Arial, sans-serif;
+        font-size: 1.125rem;
+        line-height: 120%;
+        letter-spacing: 0%;
     }
 }
