@@ -1,10 +1,14 @@
+@use "../../../styles/variables" as *;
+
 .footer-section {
+    width: 100%;
+    max-width: 1440px;
+    margin: 64px auto;
+    padding: 0 96px;
+
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    max-width: 1440px;
-    margin: 64px 96px;
 }
 
 .left-footer {
@@ -12,11 +16,29 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 32px;
+}
 
+.left-footer-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+
+    p {
+        font-size: 1.125rem;
+        color: white;
+        font-family: "Karla", Arial, sans-serif;
+        line-height: 120%;
+        letter-spacing: 0%;
+        margin: 0;
+    }
 }
 
 .footer-logo {
   position: relative;
+  display: block;
   width: 130px;
   height: 48px;
   overflow: hidden;
@@ -34,5 +56,42 @@
 
     transform: translate(-50%, -50%);
     object-fit: contain;
+    transition:
+      opacity 250ms ease,
+      transform 250ms ease,
+      filter 250ms ease;
   }
+
+  .logo-hover {
+    opacity: 0;
+  }
+
+  &:hover,
+  &:focus-visible {
+    .logo-default {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.96);
+    }
+
+    .logo-hover {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.04);
+      filter: drop-shadow(0 0 6px rgba(61, 207, 182, 0.45));
+    }
+  }
+}
+
+.middle-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p {
+        margin: 0;
+        color: $button-green;
+        font-family: "Fira Code", monospace;
+        font-size: 1.125rem;
+        line-height: 120%;
+        letter-spacing: 0%;
+        
+    }
 }
