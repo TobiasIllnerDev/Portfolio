@@ -164,22 +164,50 @@
 }
 
 .social-link {
+  position: relative;
   width: 32px;
   height: 32px;
   display: block;
   border-radius: 50%;
-  transition: transform 180ms ease;
 
   img {
     width: 100%;
     height: 100%;
     display: block;
+    transition: filter 180ms ease;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 8px);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $button-green;
+    opacity: 0;
+    transform: translateY(-50%) scale(0);
+    transition:
+      opacity 180ms ease,
+      transform 180ms ease;
   }
 
   &:hover,
   &:focus-visible {
-    transform: translateY(-3px) scale(1.08);
+    img {
+      filter: brightness(0) invert(1);
+    }
+
+    &::after {
+      opacity: 1;
+      transform: translateY(-50%) scale(1);
+    }
   }
+}
+
+.email-icon-link {
+  display: none;
 }
 
 .social-bar .side-line {
@@ -308,6 +336,10 @@
 
   .email-link {
     display: none;
+  }
+
+  .email-icon-link {
+    display: block;
   }
 
   .social-bar .side-line {
