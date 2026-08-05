@@ -56,6 +56,27 @@
                 "description": "A browser-based jump-and-run game developed with object-oriented JavaScript. Help Sharkie overcome enemies and collect valuable items."
                 }
             }
+        },
+        "comments": {
+            "title": "What my colleagues say about me",
+            "regionLabel": "Comments from colleagues",
+            "previousComment": "Show previous comment",
+            "nextComment": "Show next comment",
+            "showComment": "Show comment {{number}}",
+            "entries": {
+                "first": {
+                "text": "Tobias has proven to be a reliable and supportive team partner.",
+                "role": "Team Partner"
+                },
+                "second": {
+                "text": "Working with Tobias was a great experience. He contributed his ideas and worked reliably toward our shared goals.",
+                "role": "Frontend Developer"
+                },
+                "third": {
+                "text": "Even when facing challenging tasks, Tobias remained calm, focused, and solution-oriented.",
+                "role": "Developer"
+                }
+            }
         }
     }
 }

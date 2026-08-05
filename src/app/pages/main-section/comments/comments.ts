@@ -1,37 +1,49 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 interface Comment {
   id: number;
-  text: string;
+  textKey: string;
   author: string;
-  role: string;
+  roleKey: string;
 }
 
 @Component({
   selector: 'app-comments',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './comments.html',
   styleUrl: './comments.scss',
 })
 export class Comments {
+  readonly translate = inject(TranslateService);
+
+  changeLanguage(event: Event): void {
+    const isGerman = (event.target as HTMLInputElement).checked;
+    const language = isGerman ? 'de' : 'en';
+
+    this.translate.use(language);
+    localStorage.setItem('language', language);
+    document.documentElement.lang = language;
+  }
+
   comments: Comment[] = [
     {
       id: 1,
-      text: 'Lukas has proven to be a reliable group partner.',
+      textKey: 'app.comments.entries.first.text',
       author: 'H. Janisch',
-      role: 'Team Partner',
+      roleKey: 'app.comments.entries.first.role',
     },
     {
       id: 2,
-      text: 'Working with Lukas was a great experience.',
+      textKey: 'app.comments.entries.second.text',
       author: 'T. Schulz',
-      role: 'Frontend Developer',
+      roleKey: 'app.comments.entries.second.role',
     },
     {
       id: 3,
-      text: 'He always stayed calm, focused and solution-oriented.',
+      textKey: 'app.comments.entries.third.text',
       author: 'M. Example',
-      role: 'Developer',
+      roleKey: 'app.comments.entries.third.role',
     },
   ];
 

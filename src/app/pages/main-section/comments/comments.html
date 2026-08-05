@@ -1,9 +1,13 @@
 <section class="comments-section">
   <div class="comments-container">
-    <h2>What my colleagues say about me</h2>
+    <h2>{{ 'app.comments.title' | translate }}</h2>
 
     @if (comments.length > 0) {
-      <div class="comments-slider" role="region" aria-label="Comments from colleagues">
+      <div
+        class="comments-slider"
+        role="region"
+        [attr.aria-label]="'app.comments.regionLabel' | translate"
+      >
         <div class="comments-slider__viewport">
           <div
             class="comments-slider__track"
@@ -19,10 +23,12 @@
                 [attr.aria-hidden]="index === trackIndex ? null : 'true'"
               >
                 <blockquote>
-                  <p>{{ comment.text }}</p>
+                  <p>{{ comment.textKey | translate }}</p>
                 </blockquote>
 
-                <p class="comment-card__author">{{ comment.author }} – {{ comment.role }}</p>
+                <p class="comment-card__author">
+                  {{ comment.author }} – {{ comment.roleKey | translate }}
+                </p>
               </article>
             }
           </div>
@@ -32,7 +38,7 @@
           <div class="comments-slider__navigation">
             <button
               type="button"
-              aria-label="Show previous comment"
+              [attr.aria-label]="'app.comments.previousComment' | translate"
               (click)="showPreviousComment()"
             >
               ←
@@ -44,14 +50,18 @@
                   type="button"
                   class="comments-slider__dot"
                   [class.comments-slider__dot--active]="index === activeIndex"
-                  [attr.aria-label]="'Show comment ' + (index + 1)"
+                  [attr.aria-label]="'app.comments.showComment' | translate: { number: index + 1 }"
                   [attr.aria-current]="index === activeIndex ? 'true' : null"
                   (click)="showComment(index)"
                 ></button>
               }
             </div>
 
-            <button type="button" aria-label="Show next comment" (click)="showNextComment()">
+            <button
+              type="button"
+              [attr.aria-label]="'app.comments.nextComment' | translate"
+              (click)="showNextComment()"
+            >
               →
             </button>
           </div>
