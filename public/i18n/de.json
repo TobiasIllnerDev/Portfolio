@@ -24,6 +24,17 @@
             "from": "Ich lebe in Braunschweig und bin offen für Remote-Arbeit sowie spannende berufliche Möglichkeiten über meine Region hinaus.",
             "open": "Ich bin offen für neue Ideen und Technologien und erweitere kontinuierlich meine Fähigkeiten. Neue Herausforderungen sehe ich als Chance, mich fachlich und persönlich weiterzuentwickeln.",
             "problem": "Komplexe Aufgaben zerlege ich in überschaubare Schritte und löse sie mit analytischem Denken, Kreativität und Ausdauer. Dabei schätze ich den Austausch im Team und lerne aus jeder Herausforderung."
+        },
+        "skills": {
+            "eyebrow": "Technologien",
+            "title": "Fähigkeiten",
+            "description": "Mein Skillset umfasst moderne Frontend-Technologien sowie Erfahrungen in der Backend-Entwicklung und im Umgang mit Datenbanken. Ich lerne gerne neue Tools kennen, passe mich technischen Herausforderungen an und erweitere kontinuierlich mein Wissen, um mit der Entwicklung moderner Webtechnologien Schritt zu halten.",
+            "questionStart": "Du benötigst",
+            "questionHighlight": "eine weitere Fähigkeit?",
+            "contactText": "Kontaktiere mich gerne. Ich bin immer daran interessiert, mein Wissen zu erweitern und neue Technologien zu erlernen.",
+            "contactButton": "Lass uns reden",
+            "learningInterest": "Diese Technologien möchte ich besonders gerne lernen",
+            "growthMindset": "Wachstumsorientiertes Denken"
         }
     }
 }

@@ -26,6 +26,17 @@
             "from": "I’m based in Brunswick, Germany, and open to remote work as well as exciting professional opportunities beyond my region.",
             "open": "I’m open to new ideas and technologies and continuously work on expanding my skills. I see new challenges as opportunities to grow both professionally and personally.",
             "problem": "I break complex problems down into manageable steps and solve them through analytical thinking, creativity, and persistence. I value collaboration and use every challenge as an opportunity to learn."
+        },
+        "skills": {
+            "eyebrow": "Technologies",
+            "title": "Skill Set",
+            "description": "My skill set includes modern frontend technologies as well as experience with backend development and databases. I enjoy learning new tools, adapting to technical challenges, and continuously improving my knowledge to keep pace with the evolving world of web development.",
+            "questionStart": "You need",
+            "questionHighlight": "another skill?",
+            "contactText": "Feel free to contact me. I am always interested in expanding my knowledge and learning new technologies.",
+            "contactButton": "Let's Talk",
+            "learningInterest": "I have a special interest in learning",
+            "growthMindset": "Growth Mindset"
         }
     }
 }
