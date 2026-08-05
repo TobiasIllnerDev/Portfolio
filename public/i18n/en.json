@@ -77,6 +77,39 @@
                 "role": "Developer"
                 }
             }
+        },
+        "contact": {
+            "eyebrow": "Contact me",
+            "titleLine1": "Let's work",
+            "titleLine2": "together",
+            "question": "Got a problem to solve?",
+            "description": "Are you looking for support in developing a modern web application? I am interested in opportunities as a frontend or fullstack developer and would be happy to contribute reliable, user-focused solutions to your project.",
+            "developerQuestion": "Need a fullstack developer?",
+            "cta": "Let's talk!",
+            "form": {
+                "name": {
+                "label": "What's your name?",
+                "placeholder": "Your name goes here",
+                "error": "Oops! It seems your name is missing."
+                },
+                "email": {
+                "label": "What's your email?",
+                "placeholder": "yourname@example.com",
+                "error": "Oops! Please enter a valid email address."
+                },
+                "message": {
+                "label": "How can I help you?",
+                "placeholder": "Hello Tobias, I am interested in...",
+                "error": "Please tell me how I can help you."
+                },
+                "privacy": {
+                "beforeLink": "I've read the",
+                "link": "privacy policy",
+                "afterLink": "and agree to the processing of my data as described.",
+                "error": "Please accept the privacy policy."
+                },
+                "submit": "Say Hello ;)"
+            }
         }
     }
 }

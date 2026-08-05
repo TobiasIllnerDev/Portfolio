@@ -74,6 +74,39 @@
                 "role": "Entwickler"
                 }
             }
+        },
+        "contact": {
+            "eyebrow": "Kontakt",
+            "titleLine1": "Lass uns",
+            "titleLine2": "zusammenarbeiten",
+            "question": "Du hast ein Problem zu lösen?",
+            "description": "Du suchst Unterstützung bei der Entwicklung einer modernen Webanwendung? Ich interessiere mich für Möglichkeiten als Frontend- oder Fullstack-Entwickler und unterstütze dein Projekt gerne mit zuverlässigen und nutzerorientierten Lösungen.",
+            "developerQuestion": "Du brauchst einen Fullstack-Entwickler?",
+            "cta": "Lass uns reden!",
+            "form": {
+                "name": {
+                "label": "Wie heißt du?",
+                "placeholder": "Gib hier deinen Namen ein",
+                "error": "Hoppla! Bitte gib deinen Namen ein."
+                },
+                "email": {
+                "label": "Wie lautet deine E-Mail-Adresse?",
+                "placeholder": "deinname@beispiel.de",
+                "error": "Hoppla! Bitte gib eine gültige E-Mail-Adresse ein."
+                },
+                "message": {
+                "label": "Wie kann ich dir helfen?",
+                "placeholder": "Hallo Tobias, ich interessiere mich für...",
+                "error": "Bitte beschreibe kurz, wobei ich dir helfen kann."
+                },
+                "privacy": {
+                "beforeLink": "Ich habe die",
+                "link": "Datenschutzerklärung",
+                "afterLink": "gelesen und stimme der beschriebenen Verarbeitung meiner Daten zu.",
+                "error": "Bitte akzeptiere die Datenschutzerklärung."
+                },
+                "submit": "Sag Hallo ;)"
+            }
         }
     }
 }
