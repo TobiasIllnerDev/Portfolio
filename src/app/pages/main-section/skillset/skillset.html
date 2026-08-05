@@ -1,20 +1,22 @@
 <section class="skillset-section">
   <div class="skillset-container">
     <div class="skillset-header-div">
-      <p class="skillset-header-text">Technologies</p>
+      <p class="skillset-header-text">{{ 'app.skills.eyebrow' | translate }}</p>
       <div class="skillset-text-area">
-        <h2>Skill Set</h2>
+        <h2>{{ 'app.skills.title' | translate }}</h2>
         <div class="skillset-div-text">
           <p>
-            A short introduction of your skills. Highlight your experience of using different
-            front-end technologies and emphasise your openness to learning and adapting to new
-            technologies. Show how important it is for you to keep up with the rapid changes in web
-            development.
+            {{ 'app.skills.description' | translate }}
           </p>
-          <h3>You need <span>another skill?</span></h3>
-          <p>Feel free to contact me. I look forward to expanding on my previous knowledge.</p>
+          <h3>
+            {{ 'app.skills.questionStart' | translate }}
+            <span>{{ 'app.skills.questionHighlight' | translate }}</span>
+          </h3>
+          <p>{{ 'app.skills.contactText' | translate }}</p>
         </div>
-        <a href="#" class="talk-button"><span>Let's Talk</span></a>
+        <a href="#" class="talk-button"
+          ><span>{{ 'app.skills.contactButton' | translate }}</span></a
+        >
       </div>
     </div>
     <div class="skill-icons">
@@ -27,7 +29,7 @@
         >
           @if (icon.isLearningInterest) {
             <div class="learning-tooltip" id="learning-interest-tooltip" role="tooltip">
-              <p>I have a special interest in learning</p>
+              <p>{{ 'app.skills.learningInterest' | translate }}</p>
               <div class="learning-icons">
                 @for (learningIcon of learningInterests; track learningIcon.name) {
                   <div>
