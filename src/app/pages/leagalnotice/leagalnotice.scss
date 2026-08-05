@@ -1,0 +1,88 @@
+@use "../../../styles/variables" as *;
+
+:host {
+  display: block;
+  color: white;
+}
+
+.legal-page {
+  width: min(100% - 48px, 1120px);
+  margin: 0 auto;
+  padding: 32px 0 80px;
+}
+
+.legal-card {
+  width: 100%;
+}
+
+.legal-heading {
+  padding: 0 0 64px;
+  text-align: center;
+
+  h1 {
+    margin: 0;
+    color: $button-green;
+    font-family: "Fira Code", monospace;
+    font-size: clamp(3rem, 7vw, 5rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+}
+
+.legal-content {
+  width: min(100%, 820px);
+  margin: 0 auto;
+
+  section + section {
+    margin-top: 28px;
+  }
+
+  h2 {
+    margin: 0 0 4px;
+    color: white;
+    font-family: "Karla", Arial, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  p,
+  address {
+    margin: 0;
+    color: $button-green;
+    font-family: "Karla", Arial, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    line-height: 1.35;
+  }
+
+  a {
+    color: $button-green;
+    overflow-wrap: anywhere;
+    text-underline-offset: 3px;
+  }
+}
+
+.legal-date {
+  margin-top: 32px !important;
+  font-family: "Fira Code", monospace !important;
+  font-size: 0.9rem !important;
+}
+
+@media (max-width: 700px) {
+  .legal-page {
+    width: min(100% - 32px, 1120px);
+    padding-top: 24px;
+    padding-bottom: 56px;
+  }
+
+  .legal-heading {
+    padding-bottom: 44px;
+  }
+
+  .legal-content {
+    section + section {
+      margin-top: 24px;
+    }
+  }
+}

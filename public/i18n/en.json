@@ -111,6 +111,38 @@
                 "submit": "Say Hello ;)"
             }
         },
+        "legal": {
+            "navigation": "Legal notice page navigation",
+            "back": "Back to portfolio",
+            "title": "Legal Notice",
+            "provider": {
+                "title": "Imprint",
+                "intro": "Provider of this website:",
+                "country": "Germany"
+            },
+            "contact": {
+                "title": "Contact",
+                "email": "Email",
+                "phone": "Phone"
+            },
+            "project": {
+                "title": "About this portfolio",
+                "text": "This independently operated portfolio was created by Tobias Illner as part of further training at Developer Akademie and is used exclusively for personal presentation in job applications. It is not an official Developer Akademie website."
+            },
+            "responsibility": {
+                "title": "Responsibility for content",
+                "text": "Tobias Illner is responsible for the content of this website. The address is the provider address stated above."
+            },
+            "links": {
+                "title": "External links",
+                "text": "This website contains links to external third-party websites. I have no influence over their content. The respective provider is always responsible for the content of linked pages. Links will be removed if any legal infringement becomes known."
+            },
+            "copyright": {
+                "title": "Copyright",
+                "text": "The content and works created by me on this website are subject to German copyright law. Third-party content and rights are respected as such. Reproduction or use beyond the limits permitted by law requires the consent of the respective rights holder."
+            },
+            "date": "Last updated: August 2026"
+        },
         "footer" : {
             "title": "Fullstack Developer",
             "ort": "Brunswick Germany",

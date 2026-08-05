@@ -9,3 +9,19 @@
   );
 }
 
+.legal-route-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    to top right,
+    $b-color 35%,
+    $button-green 160%
+  );
+}
+
+.legal-route-content {
+  min-height: 0;
+  flex: 1;
+}
+

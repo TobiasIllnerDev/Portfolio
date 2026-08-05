@@ -108,6 +108,38 @@
                 "submit": "Sag Hallo ;)"
             }
         },
+        "legal": {
+            "navigation": "Navigation auf der Impressumsseite",
+            "back": "Zur\u00fcck zum Portfolio",
+            "title": "Impressum",
+            "provider": {
+                "title": "Impressum",
+                "intro": "Anbieter dieser Website:",
+                "country": "Deutschland"
+            },
+            "contact": {
+                "title": "Kontakt",
+                "email": "E-Mail",
+                "phone": "Telefon"
+            },
+            "project": {
+                "title": "\u00dcber dieses Portfolio",
+                "text": "Dieses eigenst\u00e4ndig betriebene Portfolio wurde von Tobias Illner im Rahmen einer Weiterbildung bei der Developer Akademie erstellt und dient ausschlie\u00dflich der pers\u00f6nlichen Pr\u00e4sentation zu Bewerbungszwecken. Es handelt sich nicht um eine offizielle Website der Developer Akademie."
+            },
+            "responsibility": {
+                "title": "Verantwortlich f\u00fcr die Inhalte",
+                "text": "Verantwortlich f\u00fcr die Inhalte dieser Website ist Tobias Illner. Die Anschrift entspricht der oben genannten Anbieteranschrift."
+            },
+            "links": {
+                "title": "Externe Links",
+                "text": "Diese Website enth\u00e4lt Links zu externen Websites Dritter. Auf deren Inhalte habe ich keinen Einfluss. F\u00fcr die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter verantwortlich. Bei Bekanntwerden von Rechtsverletzungen werden entsprechende Links entfernt."
+            },
+            "copyright": {
+                "title": "Urheberrecht",
+                "text": "Die von mir erstellten Inhalte und Werke auf dieser Website unterliegen dem deutschen Urheberrecht. Inhalte und Rechte Dritter werden als solche beachtet. Eine Vervielf\u00e4ltigung oder Verwertung au\u00dferhalb der gesetzlichen Grenzen bedarf der Zustimmung des jeweiligen Rechteinhabers."
+            },
+            "date": "Stand: August 2026"
+        },
         "footer" : {
             "title": "Fullstack-Entwickler",
             "ort": "Braunschweig Deutschland",

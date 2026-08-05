@@ -1,11 +1,21 @@
-<section class="background-color-class">
-  <app-header></app-header>
-  <app-hero></app-hero>
-</section>
-<app-aboutme></app-aboutme>
-<app-skillset></app-skillset>
-<app-projects></app-projects>
-<app-comments></app-comments>
-<app-contactme></app-contactme>
-<app-footer></app-footer>
-<router-outlet />
+@if (isLegalNotice()) {
+  <div class="legal-route-shell">
+    <app-header></app-header>
+    <main class="legal-route-content">
+      <router-outlet />
+    </main>
+    <app-footer></app-footer>
+  </div>
+} @else {
+  <section class="background-color-class">
+    <app-header></app-header>
+    <app-hero></app-hero>
+  </section>
+  <app-aboutme></app-aboutme>
+  <app-skillset></app-skillset>
+  <app-projects></app-projects>
+  <app-comments></app-comments>
+  <app-contactme></app-contactme>
+  <app-footer></app-footer>
+  <router-outlet />
+}

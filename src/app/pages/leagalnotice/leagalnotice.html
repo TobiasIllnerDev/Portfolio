@@ -1,1 +1,52 @@
-<p>leagalnotice works!</p>
+<main class="legal-page">
+  <article class="legal-card">
+    <header class="legal-heading">
+      <h1>{{ 'app.legal.title' | translate }}</h1>
+    </header>
+
+    <div class="legal-content">
+      <section>
+        <h2>{{ 'app.legal.provider.title' | translate }}</h2>
+        <p>{{ 'app.legal.provider.intro' | translate }}</p>
+        <address>
+          Tobias Illner<br />
+          Hirtenweg 13<br />
+          38536 Meinersen<br />
+          {{ 'app.legal.provider.country' | translate }}
+        </address>
+      </section>
+
+      <section>
+        <h2>{{ 'app.legal.contact.title' | translate }}</h2>
+        <p>
+          {{ 'app.legal.contact.email' | translate }}:
+          <a href="mailto:tobias.illner@hotmail.de">tobias.illner@hotmail.de</a><br />
+          {{ 'app.legal.contact.phone' | translate }}:
+          <a href="tel:+4915901835133">01590 1835133</a>
+        </p>
+      </section>
+
+      <section>
+        <h2>{{ 'app.legal.project.title' | translate }}</h2>
+        <p>{{ 'app.legal.project.text' | translate }}</p>
+      </section>
+
+      <section>
+        <h2>{{ 'app.legal.responsibility.title' | translate }}</h2>
+        <p>{{ 'app.legal.responsibility.text' | translate }}</p>
+      </section>
+
+      <section>
+        <h2>{{ 'app.legal.links.title' | translate }}</h2>
+        <p>{{ 'app.legal.links.text' | translate }}</p>
+      </section>
+
+      <section>
+        <h2>{{ 'app.legal.copyright.title' | translate }}</h2>
+        <p>{{ 'app.legal.copyright.text' | translate }}</p>
+      </section>
+
+      <p class="legal-date">{{ 'app.legal.date' | translate }}</p>
+    </div>
+  </article>
+</main>

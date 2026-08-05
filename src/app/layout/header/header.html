@@ -15,11 +15,11 @@
       <span class="switch-background" aria-hidden="true"></span>
     </label>
 
-    <a href="#about-me">{{ 'app.nav.about' | translate }}</a>
-    <a href="#skills">{{ 'app.nav.skills' | translate }}</a>
-    <a href="#projects">{{ 'app.nav.projects' | translate }}</a>
+    <a routerLink="/" fragment="about-me">{{ 'app.nav.about' | translate }}</a>
+    <a routerLink="/" fragment="skills">{{ 'app.nav.skills' | translate }}</a>
+    <a routerLink="/" fragment="projects">{{ 'app.nav.projects' | translate }}</a>
   </div>
-  <a class="nav-logo" href="#">
+  <a class="nav-logo" routerLink="/">
     <img class="logo-default" src="icons/Logo-weiß.png" alt="Tobias Illner" />
     <img class="logo-hover" src="icons/Logo-outline.png" alt="" />
   </a>

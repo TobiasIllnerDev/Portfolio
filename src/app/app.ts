@@ -1,6 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, DestroyRef, inject, signal } from '@angular/core';
 import { TranslateService } from "@ngx-translate/core";
-import { RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { filter } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Header } from './layout/header/header';
 import { Hero } from './pages/main-section/hero/hero';
 import { Aboutme } from './pages/main-section/aboutme/aboutme';
@@ -18,6 +20,9 @@ import { Footer } from './layout/footer/footer';
 })
 export class App {
   private readonly translate = inject(TranslateService);
+  private readonly router = inject(Router);
+  private readonly destroyRef = inject(DestroyRef);
+  readonly isLegalNotice = signal(this.router.url.startsWith('/impressum'));
 
   constructor() {
     const savedLanguage = localStorage.getItem('language');
@@ -27,5 +32,14 @@ export class App {
 
     this.translate.use(language);
     document.documentElement.lang = language;
+
+    this.router.events
+      .pipe(
+        filter((event): event is NavigationEnd => event instanceof NavigationEnd),
+        takeUntilDestroyed(this.destroyRef),
+      )
+      .subscribe((event) => {
+        this.isLegalNotice.set(event.urlAfterRedirects.startsWith('/impressum'));
+      });
   }
 }
