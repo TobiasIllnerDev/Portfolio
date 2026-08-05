@@ -1,8 +1,6 @@
 {
     "app": {
         "nav": {
-        "home": "Start",
-        "contact": "Kontakt",
         "about": "Über mich",
         "skills": "Fähigkeiten",
         "projects": "Projekte",

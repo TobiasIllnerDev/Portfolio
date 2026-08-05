@@ -1,11 +1,15 @@
 <section class="hero-section">
   <div class="hero-content">
-    <h2>Fullstack Developer</h2>
+    <h2>{{ 'app.hero.title' | translate }}</h2>
     <h1>Tobias Illner</h1>
 
     <nav class="hero-navigation" aria-label="Hero navigation">
-      <a href="#projects" class="talk-button"><span>Check my work</span></a>
-      <a href="#contact" class="talk-button"><span>Contact me</span></a>
+      <a href="#projects" class="talk-button"
+        ><span>{{ 'app.hero.work' | translate }}</span></a
+      >
+      <a href="#contact" class="talk-button"
+        ><span>{{ 'app.hero.contact' | translate }}</span></a
+      >
     </nav>
   </div>
 
@@ -60,7 +64,7 @@
           @for (group of tickerGroups; track group) {
             <div class="ticker-group">
               @for (item of tickerItems; track item) {
-                <span>{{ item }}</span>
+                <span>{{ item | translate }}</span>
                 <span class="ticker-separator" aria-hidden="true">•</span>
               }
             </div>
