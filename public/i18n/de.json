@@ -34,6 +34,25 @@
             "contactText": "Kontaktiere mich gerne. Ich bin immer daran interessiert, mein Wissen zu erweitern und neue Technologien zu erlernen.",
             "contactButton": "Lass uns reden",
             "learningInterest": "Diese Technologien möchte ich besonders gerne lernen"
+        },
+        "projects": {
+            "eyebrow": "Portfolio",
+            "title": "Ausgewählte Projekte",
+            "introLine1": "Entdecke hier eine Auswahl meiner Projekte –",
+            "introLine2": "interagiere mit ihnen und erlebe meine Fähigkeiten in Aktion.",
+            "dialogQuestion": "Worum geht es in diesem Projekt?",
+            "closeDialog": "Projektdetails schließen",
+            "previewAlt": "Vorschau des Projekts {{project}}",
+            "liveTest": "Live-Demo",
+            "nextProject": "Nächstes Projekt",
+            "items": {
+                "pokedex": {
+                "description": "Ein responsiver Pokédex, mit dem Nutzer nach Pokémon suchen und ihre wichtigsten Informationen entdecken können."
+                },
+                "sharkie": {
+                "description": "Ein browserbasiertes Jump-and-Run-Spiel, das mit objektorientiertem JavaScript entwickelt wurde. Hilf Sharkie dabei, Gegner zu überwinden und wertvolle Gegenstände zu sammeln."
+                }
+            }
         }
     }
 }

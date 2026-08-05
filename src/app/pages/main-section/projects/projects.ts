@@ -1,14 +1,26 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, inject } from '@angular/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-projects',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
 })
 
 export class Projects {
+  readonly translate = inject(TranslateService);
+
+  changeLanguage(event: Event): void {
+    const isGerman = (event.target as HTMLInputElement).checked;
+    const language = isGerman ? 'de' : 'en';
+
+    this.translate.use(language);
+    localStorage.setItem('language', language);
+    document.documentElement.lang = language;
+  }
+
   @ViewChild('projectDialog')
   projectDialog!: ElementRef<HTMLDialogElement>;
 
@@ -16,8 +28,7 @@ export class Projects {
     pokedex: {
       number: '01',
       title: 'Pokedex',
-      description:
-        'A responsive Pokédex that lets users search and explore Pokémon and their most important information.',
+      descriptionKey: 'app.projects.items.pokedex.description',
       image: 'images/Pokedex.png',
       githubUrl: 'https://github.com/TobiasIllnerDev/pokedex',
       liveUrl: 'https://tobiasillner.developerakademie.net/pokedex/index.html',
@@ -30,8 +41,7 @@ export class Projects {
     sharkie: {
       number: '02',
       title: 'Sharkie',
-      description:
-        'A browser-based jump-and-run game built with object-oriented JavaScript.',
+      descriptionKey: 'app.projects.items.sharkie.description',
       image: 'images/Sharki-projekt.png',
       githubUrl: 'https://github.com/TobiasIllnerDev/Sharkie',
       liveUrl: 'https://tobiasillner.developerakademie.net/sharkie/index.html',

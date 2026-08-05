@@ -37,6 +37,25 @@
             "contactButton": "Let's Talk",
             "learningInterest": "I have a special interest in learning",
             "growthMindset": "Growth Mindset"
+        },
+        "projects": {
+            "eyebrow": "Portfolio",
+            "title": "Featured Projects",
+            "introLine1": "Explore a selection of my work here –",
+            "introLine2": "interact with the projects to see my skills in action.",
+            "dialogQuestion": "What is this project about?",
+            "closeDialog": "Close project details",
+            "previewAlt": "Preview of the {{project}} project",
+            "liveTest": "Live Test",
+            "nextProject": "Next project",
+            "items": {
+                "pokedex": {
+                "description": "A responsive Pokédex that allows users to search for Pokémon and explore their most important information."
+                },
+                "sharkie": {
+                "description": "A browser-based jump-and-run game developed with object-oriented JavaScript. Help Sharkie overcome enemies and collect valuable items."
+                }
+            }
         }
     }
 }

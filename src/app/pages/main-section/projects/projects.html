@@ -1,12 +1,12 @@
 <section class="projects">
   <div class="projects-container">
     <div class="projects__header">
-      <p class="projects-header-text">Portfolio</p>
+      <p class="projects-header-text">{{ 'app.projects.eyebrow' | translate }}</p>
       <div class="projects-text-area">
-        <h2>Featured Projects</h2>
+        <h2>{{ 'app.projects.title' | translate }}</h2>
         <p>
-          Explore a selection of my work here – interact with <br />
-          projects to see my skills in action.
+          {{ 'app.projects.introLine1' | translate }} <br />
+          {{ 'app.projects.introLine2' | translate }}
         </p>
       </div>
     </div>
@@ -37,7 +37,7 @@
           class="project-dialog__close"
           type="button"
           (click)="closeProject()"
-          aria-label="Dialog schließen"
+          [attr.aria-label]="'app.projects.closeDialog' | translate"
         >
           ×
         </button>
@@ -46,8 +46,8 @@
           <div class="project-dialog__details">
             <span class="project-dialog__number">{{ selectedProject.number }}</span>
             <h2>{{ selectedProject.title }}</h2>
-            <h3>What is this project about?</h3>
-            <p>{{ selectedProject.description }}</p>
+            <h3>{{ 'app.projects.dialogQuestion' | translate }}</h3>
+            <p>{{ selectedProject.descriptionKey | translate }}</p>
 
             <div class="project-dialog__technologies">
               @for (technology of selectedProject.technologies; track technology.name) {
@@ -63,7 +63,7 @@
                 GitHub <span>↗</span>
               </a>
               <a [href]="selectedProject.liveUrl" target="_blank" rel="noopener noreferrer">
-                Live Test <span>↗</span>
+                {{ 'app.projects.liveTest' | translate }} <span>↗</span>
               </a>
             </div>
           </div>
@@ -71,10 +71,10 @@
           <div class="project-dialog__visual">
             <img
               [src]="selectedProject.image"
-              [alt]="'Vorschau des Projekts ' + selectedProject.title"
+              [alt]="'app.projects.previewAlt' | translate: { project: selectedProject.title }"
             />
             <button type="button" class="project-dialog__next" (click)="showNextProject()">
-              Next project <span>→</span>
+              {{ 'app.projects.nextProject' | translate }} <span>→</span>
             </button>
           </div>
         </div>
