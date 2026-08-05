@@ -16,6 +16,14 @@
                 "location": "Aus Braunschweig",
                 "available": "Offen für neue Projekte"
             }
+        },
+        "about": {
+            "who": "Wer bin Ich",
+            "about": "Über mich",
+            "info": "Hallo, ich bin Tobias, ein begeisterter Fullstack-Entwickler. Mich motiviert es, aus Ideen funktionale und benutzerfreundliche Anwendungen zu entwickeln. Dabei möchte ich nicht nur funktionierenden Code schreiben, sondern Lösungen schaffen, die durch eine klare Struktur, gutes Design und eine angenehme Nutzererfahrung überzeugen.",
+            "from": "Ich lebe in Braunschweig und bin offen für Remote-Arbeit sowie spannende berufliche Möglichkeiten über meine Region hinaus.",
+            "open": "Ich bin offen für neue Ideen und Technologien und erweitere kontinuierlich meine Fähigkeiten. Neue Herausforderungen sehe ich als Chance, mich fachlich und persönlich weiterzuentwickeln.",
+            "problem": "Komplexe Aufgaben zerlege ich in überschaubare Schritte und löse sie mit analytischem Denken, Kreativität und Ausdauer. Dabei schätze ich den Austausch im Team und lerne aus jeder Herausforderung."
         }
     }
 }

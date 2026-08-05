@@ -18,6 +18,14 @@
                 "location": "Based in Brunswick",
                 "available": "Open to work"
             }
+        },
+        "about": {
+            "who": "Who I Am",
+            "about": "About me",
+            "info": "Hi, I’m Tobias, a passionate fullstack developer. I enjoy turning ideas into functional and user-friendly applications. My goal is not only to write working code, but to create solutions that stand out through clear structure, thoughtful design, and an enjoyable user experience.",
+            "from": "I’m based in Brunswick, Germany, and open to remote work as well as exciting professional opportunities beyond my region.",
+            "open": "I’m open to new ideas and technologies and continuously work on expanding my skills. I see new challenges as opportunities to grow both professionally and personally.",
+            "problem": "I break complex problems down into manageable steps and solve them through analytical thinking, creativity, and persistence. I value collaboration and use every challenge as an opportunity to learn."
         }
     }
 }
