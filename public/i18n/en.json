@@ -110,6 +110,11 @@
                 },
                 "submit": "Say Hello ;)"
             }
+        },
+        "footer" : {
+            "title": "Fullstack Developer",
+            "ort": "Brunswick Germany",
+            "legal": "Legal Notice"
         }
     }
 }

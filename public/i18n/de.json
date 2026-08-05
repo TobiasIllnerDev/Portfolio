@@ -107,6 +107,11 @@
                 },
                 "submit": "Sag Hallo ;)"
             }
+        },
+        "footer" : {
+            "title": "Fullstack-Entwickler",
+            "ort": "Braunschweig Deutschland",
+            "legal": "Impressum"
         }
     }
 }
