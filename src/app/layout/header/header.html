@@ -1,16 +1,23 @@
 <section class="nav-section">
   <div class="nav-div">
     <label for="language-checkbox" class="language-switch">
-      <input type="checkbox" id="language-checkbox" role="switch" aria-label="Sprache wechseln" />
+      <input
+        type="checkbox"
+        id="language-checkbox"
+        role="switch"
+        [attr.aria-label]="'app.nav.changeLanguage' | translate"
+        [checked]="translate.currentLang() === 'de'"
+        (change)="changeLanguage($event)"
+      />
 
       <span class="language-option en">EN</span>
       <span class="language-option de">DE</span>
       <span class="switch-background" aria-hidden="true"></span>
     </label>
 
-    <a href="#">About me</a>
-    <a href="#">Skills</a>
-    <a href="#">Projects</a>
+    <a href="#about-me">{{ 'app.nav.about' | translate }}</a>
+    <a href="#skills">{{ 'app.nav.skills' | translate }}</a>
+    <a href="#projects">{{ 'app.nav.projects' | translate }}</a>
   </div>
   <a class="nav-logo" href="#">
     <img class="logo-default" src="icons/Logo-weiß.png" alt="Tobias Illner" />

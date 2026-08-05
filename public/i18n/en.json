@@ -1,0 +1,23 @@
+{
+    "app": {
+        "nav": {
+        "home": "Home",
+        "contact": "Contact",
+        "about": "About me",
+        "skills": "Skills",
+        "projects": "Projects",
+        "changeLanguage": "Switch language"
+        },
+        "hero": {
+            "title": "Fullstack Developer",
+            "work": "Check my work",
+            "contact": "Contact me",
+            "ticker": {
+                "remote": "Available for remote work",
+                "developer": "Fullstack Developer",
+                "location": "Based in Brunswick",
+                "available": "Open to work"
+            }
+        }
+    }
+}

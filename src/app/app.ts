@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslateService } from "@ngx-translate/core";
 import { RouterOutlet } from '@angular/router';
 import { Header } from './layout/header/header';
 import { Hero } from './pages/main-section/hero/hero';
@@ -16,5 +17,15 @@ import { Footer } from './layout/footer/footer';
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('portfolio');
+  private readonly translate = inject(TranslateService);
+
+  constructor() {
+    const savedLanguage = localStorage.getItem('language');
+    const language = savedLanguage === 'de' || savedLanguage === 'en'
+      ? savedLanguage
+      : 'en';
+
+    this.translate.use(language);
+    document.documentElement.lang = language;
+  }
 }

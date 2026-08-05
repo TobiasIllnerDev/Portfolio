@@ -1,0 +1,23 @@
+{
+    "app": {
+        "nav": {
+        "home": "Start",
+        "contact": "Kontakt",
+        "about": "Über mich",
+        "skills": "Fähigkeiten",
+        "projects": "Projekte",
+        "changeLanguage": "Sprache wechseln"
+        },
+        "hero": {
+            "title": "Fullstack-Entwickler",
+            "work": "Meine Projekte",
+            "contact": "Kontaktiere mich",
+            "ticker": {
+                "remote": "Remote-Arbeit möglich",
+                "developer": "Fullstack-Entwickler",
+                "location": "Aus Braunschweig",
+                "available": "Offen für neue Projekte"
+            }
+        }
+    }
+}
