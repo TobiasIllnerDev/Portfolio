@@ -105,7 +105,10 @@
                 "afterLink": "gelesen und stimme der beschriebenen Verarbeitung meiner Daten zu.",
                 "error": "Bitte akzeptiere die Datenschutzerklärung."
                 },
-                "submit": "Sag Hallo ;)"
+                "submit": "Sag Hallo ;)",
+                "sending": "Wird gesendet...",
+                "success": "Vielen Dank! Deine Nachricht wurde erfolgreich gesendet.",
+                "sendError": "Die Nachricht konnte nicht gesendet werden. Bitte versuche es später erneut."
             }
         },
         "legal": {

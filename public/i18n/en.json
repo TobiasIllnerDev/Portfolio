@@ -108,7 +108,10 @@
                 "afterLink": "and agree to the processing of my data as described.",
                 "error": "Please accept the privacy policy."
                 },
-                "submit": "Say Hello ;)"
+                "submit": "Say Hello ;)",
+                "sending": "Sending...",
+                "success": "Thank you! Your message was sent successfully.",
+                "sendError": "The message could not be sent. Please try again later."
             }
         },
         "legal": {

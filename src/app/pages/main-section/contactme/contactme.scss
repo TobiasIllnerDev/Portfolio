@@ -63,7 +63,16 @@
 }
 
 .contact-form {
+  position: relative;
   min-width: 0;
+
+  &__honeypot {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
 
   &__field {
     display: flex;
@@ -137,6 +146,20 @@
     > .contact-form__error {
       margin-top: 13px;
       font-size: 0.875rem;
+    }
+  }
+
+  &__status {
+    margin: 14px 0 0;
+    text-align: center;
+    font-size: 1rem;
+
+    &--success {
+      color: $button-green;
+    }
+
+    &--error {
+      color: #ec7b76;
     }
   }
 
@@ -220,6 +243,11 @@
     &:focus-visible {
       outline: 2px solid $button-green;
       outline-offset: 4px;
+    }
+
+    &:disabled {
+      cursor: wait;
+      opacity: 0.65;
     }
   }
 }

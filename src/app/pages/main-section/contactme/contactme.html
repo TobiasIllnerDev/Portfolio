@@ -17,7 +17,17 @@
       </p>
     </div>
 
-    <form class="contact-form" id="contact-form" novalidate>
+    <form class="contact-form" id="contact-form" novalidate (submit)="sendMessage($event)">
+      <div class="contact-form__honeypot" aria-hidden="true">
+        <label for="contact-website">Website</label>
+        <input
+          id="contact-website"
+          name="website"
+          type="text"
+          tabindex="-1"
+          autocomplete="off"
+        />
+      </div>
       <div class="contact-form__field">
         <label for="contact-name">{{ 'app.contact.form.name.label' | translate }}</label>
         <input
@@ -89,9 +99,21 @@
         </p>
       </div>
 
-      <button class="submit" type="submit">
-        <span>{{ 'app.contact.form.submit' | translate }}</span>
+      <button class="submit" type="submit" [disabled]="isSending">
+        <span>
+          {{ (isSending ? 'app.contact.form.sending' : 'app.contact.form.submit') | translate }}
+        </span>
       </button>
+
+      @if (submitState === 'success') {
+        <p class="contact-form__status contact-form__status--success" role="status">
+          {{ 'app.contact.form.success' | translate }}
+        </p>
+      } @else if (submitState === 'error') {
+        <p class="contact-form__status contact-form__status--error" role="alert">
+          {{ 'app.contact.form.sendError' | translate }}
+        </p>
+      }
     </form>
   </div>
 </section>
