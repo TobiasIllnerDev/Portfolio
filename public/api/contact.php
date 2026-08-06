@@ -13,6 +13,16 @@ function respond(int $status, array $payload): never
     exit;
 }
 
+function textLength(string $value): int
+{
+    return function_exists('mb_strlen') ? mb_strlen($value, 'UTF-8') : strlen($value);
+}
+
+function letterCount(string $value): int
+{
+    return preg_match_all('/\p{L}/u', $value) ?: 0;
+}
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Allow: POST');
     respond(405, ['success' => false, 'error' => 'Method not allowed']);
@@ -50,12 +60,42 @@ if ($honeypot !== '') {
 }
 
 if (
-    strlen($name) < 2 || strlen($name) > 100 ||
-    strlen($email) > 254 || !filter_var($email, FILTER_VALIDATE_EMAIL) ||
-    strlen($message) < 10 || strlen($message) > 5_000 ||
-    !$privacyAccepted
+    textLength($name) < 2 || textLength($name) > 100 ||
+    letterCount($name) < 2 ||
+    preg_match('~https?://|www\.~i', $name)
 ) {
-    respond(422, ['success' => false, 'error' => 'Invalid input data']);
+    respond(422, ['success' => false, 'error' => 'Invalid name', 'field' => 'name']);
+}
+
+if (textLength($email) > 254 || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    respond(422, ['success' => false, 'error' => 'Invalid email', 'field' => 'email']);
+}
+
+$emailDomain = strtolower((string) substr(strrchr($email, '@') ?: '', 1));
+if (
+    $emailDomain === '' ||
+    (!checkdnsrr($emailDomain, 'MX') && !checkdnsrr($emailDomain, 'A'))
+) {
+    respond(422, [
+        'success' => false,
+        'error' => 'Email domain does not exist',
+        'field' => 'email',
+        'reason' => 'domain',
+    ]);
+}
+
+$linkCount = preg_match_all('~(?:https?://|www\.)~i', $message) ?: 0;
+if (
+    textLength($message) < 20 || textLength($message) > 5_000 ||
+    letterCount($message) < 10 ||
+    preg_match('/(\S)\1{9,}/u', $message) ||
+    $linkCount > 3
+) {
+    respond(422, ['success' => false, 'error' => 'Invalid message', 'field' => 'message']);
+}
+
+if (!$privacyAccepted) {
+    respond(422, ['success' => false, 'error' => 'Privacy policy not accepted', 'field' => 'privacyPolicy']);
 }
 
 $recipient = 'tobias.illner@hotmail.de';

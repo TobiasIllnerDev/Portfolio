@@ -95,7 +95,8 @@
                 "email": {
                 "label": "What's your email?",
                 "placeholder": "yourname@example.com",
-                "error": "Oops! Please enter a valid email address."
+                "error": "Oops! Please enter a valid email address.",
+                "domainError": "This email domain does not appear to exist. Please check the address."
                 },
                 "message": {
                 "label": "How can I help you?",

@@ -92,7 +92,8 @@
                 "email": {
                 "label": "Wie lautet deine E-Mail-Adresse?",
                 "placeholder": "deinname@beispiel.de",
-                "error": "Hoppla! Bitte gib eine gültige E-Mail-Adresse ein."
+                "error": "Hoppla! Bitte gib eine gültige E-Mail-Adresse ein.",
+                "domainError": "Diese E-Mail-Domain scheint nicht zu existieren. Bitte prüfe die Adresse."
                 },
                 "message": {
                 "label": "Wie kann ich dir helfen?",

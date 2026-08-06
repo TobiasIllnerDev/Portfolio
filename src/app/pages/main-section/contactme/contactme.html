@@ -38,9 +38,15 @@
           autocomplete="name"
           aria-describedby="name-error"
           minlength="2"
+          maxlength="100"
           required
+          (input)="clearFieldError('name')"
         />
-        <p class="contact-form__error" id="name-error">
+        <p
+          class="contact-form__error"
+          [class.contact-form__error--visible]="invalidField() === 'name'"
+          id="name-error"
+        >
           {{ 'app.contact.form.name.error' | translate }}
         </p>
       </div>
@@ -54,10 +60,20 @@
           [placeholder]="'app.contact.form.email.placeholder' | translate"
           autocomplete="email"
           aria-describedby="email-error"
+          maxlength="254"
           required
+          (input)="clearFieldError('email')"
         />
-        <p class="contact-form__error" id="email-error">
-          {{ 'app.contact.form.email.error' | translate }}
+        <p
+          class="contact-form__error"
+          [class.contact-form__error--visible]="invalidField() === 'email'"
+          id="email-error"
+        >
+          {{
+            (emailDomainInvalid()
+              ? 'app.contact.form.email.domainError'
+              : 'app.contact.form.email.error') | translate
+          }}
         </p>
       </div>
 
@@ -69,10 +85,16 @@
           rows="4"
           [placeholder]="'app.contact.form.message.placeholder' | translate"
           aria-describedby="message-error"
-          minlength="10"
+          minlength="20"
+          maxlength="5000"
           required
+          (input)="clearFieldError('message')"
         ></textarea>
-        <p class="contact-form__error" id="message-error">
+        <p
+          class="contact-form__error"
+          [class.contact-form__error--visible]="invalidField() === 'message'"
+          id="message-error"
+        >
           {{ 'app.contact.form.message.error' | translate }}
         </p>
       </div>

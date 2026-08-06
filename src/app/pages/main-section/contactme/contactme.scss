@@ -132,6 +132,10 @@
     font-size: 1rem;
     line-height: 1.2;
     visibility: hidden;
+
+    &--visible {
+      visibility: visible;
+    }
   }
 
   & > :has(:user-invalid) > &__error {

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, ElementRef, inject, signal, ViewChild } from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { finalize, timeout } from 'rxjs';
@@ -15,6 +15,8 @@ export class Contactme {
 
   readonly isSending = signal(false);
   readonly submitState = signal<'idle' | 'success' | 'error'>('idle');
+  readonly invalidField = signal<'name' | 'email' | 'message' | null>(null);
+  readonly emailDomainInvalid = signal(false);
 
   @ViewChild('successDialog')
   private successDialog?: ElementRef<HTMLDialogElement>;
@@ -49,6 +51,8 @@ export class Contactme {
 
     this.isSending.set(true);
     this.submitState.set('idle');
+    this.invalidField.set(null);
+    this.emailDomainInvalid.set(false);
 
     this.http
       .post<{ success: boolean }>('/api/contact.php', payload)
@@ -67,7 +71,27 @@ export class Contactme {
           this.submitState.set('success');
           this.successDialog?.nativeElement.showModal();
         },
-        error: () => this.submitState.set('error'),
+        error: (error: HttpErrorResponse) => {
+          const field = error.error?.field;
+
+          if (error.status === 422 && ['name', 'email', 'message'].includes(field)) {
+            this.invalidField.set(field);
+            this.emailDomainInvalid.set(field === 'email' && error.error?.reason === 'domain');
+            return;
+          }
+
+          this.submitState.set('error');
+        },
       });
+  }
+
+  clearFieldError(field: 'name' | 'email' | 'message'): void {
+    if (this.invalidField() === field) {
+      this.invalidField.set(null);
+    }
+
+    if (field === 'email') {
+      this.emailDomainInvalid.set(false);
+    }
   }
 }
