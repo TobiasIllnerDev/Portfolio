@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, inject, signal, ViewChild } from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { finalize, timeout } from 'rxjs';
 
 @Component({
   selector: 'app-contactme',
@@ -12,8 +13,11 @@ export class Contactme {
   readonly translate = inject(TranslateService);
   private readonly http = inject(HttpClient);
 
-  isSending = false;
-  submitState: 'idle' | 'success' | 'error' = 'idle';
+  readonly isSending = signal(false);
+  readonly submitState = signal<'idle' | 'success' | 'error'>('idle');
+
+  @ViewChild('successDialog')
+  private successDialog?: ElementRef<HTMLDialogElement>;
 
   changeLanguage(event: Event): void {
     const isGerman = (event.target as HTMLInputElement).checked;
@@ -26,10 +30,11 @@ export class Contactme {
 
   sendMessage(event: SubmitEvent): void {
     event.preventDefault();
+    event.stopPropagation();
 
     const form = event.currentTarget as HTMLFormElement;
 
-    if (!form.reportValidity() || this.isSending) {
+    if (!form.reportValidity() || this.isSending()) {
       return;
     }
 
@@ -42,19 +47,27 @@ export class Contactme {
       website: String(formData.get('website') ?? ''),
     };
 
-    this.isSending = true;
-    this.submitState = 'idle';
+    this.isSending.set(true);
+    this.submitState.set('idle');
 
-    this.http.post<{ success: boolean }>('/api/contact.php', payload).subscribe({
-      next: () => {
-        form.reset();
-        this.isSending = false;
-        this.submitState = 'success';
-      },
-      error: () => {
-        this.isSending = false;
-        this.submitState = 'error';
-      },
-    });
+    this.http
+      .post<{ success: boolean }>('/api/contact.php', payload)
+      .pipe(
+        timeout(20_000),
+        finalize(() => this.isSending.set(false)),
+      )
+      .subscribe({
+        next: (response) => {
+          if (!response.success) {
+            this.submitState.set('error');
+            return;
+          }
+
+          form.reset();
+          this.submitState.set('success');
+          this.successDialog?.nativeElement.showModal();
+        },
+        error: () => this.submitState.set('error'),
+      });
   }
 }

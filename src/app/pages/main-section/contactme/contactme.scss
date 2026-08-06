@@ -267,6 +267,63 @@
   }
 }
 
+.contact-dialog {
+  width: min(420px, calc(100% - 40px));
+  padding: 32px;
+  color: #ffffff;
+  text-align: center;
+  background: #1c1c1c;
+  border: 1px solid $button-green;
+  border-radius: 16px;
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(3px);
+  }
+
+  &__icon {
+    display: grid;
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 18px;
+    color: #1c1c1c;
+    background: $button-green;
+    border-radius: 50%;
+    place-items: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+  }
+
+  h3 {
+    margin: 0 0 12px;
+    color: $button-green;
+    font: 500 1.5rem/1.25 "Fira Code", monospace;
+  }
+
+  p {
+    margin: 0 0 24px;
+    font-size: 1.05rem;
+    line-height: 1.45;
+  }
+
+  button {
+    min-width: 120px;
+    padding: 10px 22px;
+    color: #ffffff;
+    background: transparent;
+    border: 1px solid $button-green;
+    border-radius: 100px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      color: #1c1c1c;
+      background: $button-green;
+    }
+  }
+}
+
 @keyframes talk-text-slide {
   0% {
     transform: translateX(0);

@@ -111,7 +111,9 @@
                 "submit": "Say Hello ;)",
                 "sending": "Sending...",
                 "success": "Thank you! Your message was sent successfully.",
-                "sendError": "The message could not be sent. Please try again later."
+                "sendError": "The message could not be sent. Please try again later.",
+                "dialogTitle": "Message sent",
+                "dialogClose": "Close"
             }
         },
         "legal": {

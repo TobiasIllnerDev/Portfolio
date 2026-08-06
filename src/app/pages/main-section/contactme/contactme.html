@@ -99,21 +99,26 @@
         </p>
       </div>
 
-      <button class="submit" type="submit" [disabled]="isSending">
+      <button class="submit" type="submit" [disabled]="isSending()">
         <span>
-          {{ (isSending ? 'app.contact.form.sending' : 'app.contact.form.submit') | translate }}
+          {{ (isSending() ? 'app.contact.form.sending' : 'app.contact.form.submit') | translate }}
         </span>
       </button>
 
-      @if (submitState === 'success') {
-        <p class="contact-form__status contact-form__status--success" role="status">
-          {{ 'app.contact.form.success' | translate }}
-        </p>
-      } @else if (submitState === 'error') {
+      @if (submitState() === 'error') {
         <p class="contact-form__status contact-form__status--error" role="alert">
           {{ 'app.contact.form.sendError' | translate }}
         </p>
       }
     </form>
+
+    <dialog #successDialog class="contact-dialog" aria-labelledby="contact-dialog-title">
+      <div class="contact-dialog__icon" aria-hidden="true">✓</div>
+      <h3 id="contact-dialog-title">{{ 'app.contact.form.dialogTitle' | translate }}</h3>
+      <p>{{ 'app.contact.form.success' | translate }}</p>
+      <button type="button" (click)="successDialog.close()">
+        {{ 'app.contact.form.dialogClose' | translate }}
+      </button>
+    </dialog>
   </div>
 </section>
