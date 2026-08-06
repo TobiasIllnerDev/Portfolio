@@ -59,7 +59,7 @@ if (
 }
 
 $recipient = 'tobias.illner@hotmail.de';
-$sender = 'website@tobias-illner.de';
+$sender = 'webmaster@tobias-illner.de';
 $subject = 'Neue Nachricht ueber tobias-illner.de';
 
 $mailBody = implode("\r\n", [
