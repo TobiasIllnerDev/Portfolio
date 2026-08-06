@@ -74,6 +74,7 @@ if (textLength($email) > 254 || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 $emailDomain = strtolower((string) substr(strrchr($email, '@') ?: '', 1));
 if (
     $emailDomain === '' ||
+    !str_contains($emailDomain, '.') ||
     (!checkdnsrr($emailDomain, 'MX') && !checkdnsrr($emailDomain, 'A'))
 ) {
     respond(422, [

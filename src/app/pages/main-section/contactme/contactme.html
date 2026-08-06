@@ -71,6 +71,7 @@
           [placeholder]="'app.contact.form.email.placeholder' | translate"
           autocomplete="email"
           aria-describedby="email-error"
+          pattern="[^\s@]+@[^\s@.]+(?:\.[^\s@.]+)+"
           maxlength="254"
           required
           (input)="clearFieldError('email')"
