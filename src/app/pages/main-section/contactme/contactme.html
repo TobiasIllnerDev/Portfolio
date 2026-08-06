@@ -147,11 +147,13 @@
         </span>
       </button>
 
-      @if (submitState() === 'error') {
-        <p class="contact-form__status contact-form__status--error" role="alert">
-          {{ 'app.contact.form.sendError' | translate }}
-        </p>
-      }
+      <p
+        class="contact-form__status contact-form__status--error"
+        [class.contact-form__status--visible]="submitState() === 'error'"
+        role="alert"
+      >
+        {{ 'app.contact.form.sendError' | translate }}
+      </p>
     </form>
 
     <dialog #successDialog class="contact-dialog" aria-labelledby="contact-dialog-title">
