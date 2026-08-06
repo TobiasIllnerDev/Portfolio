@@ -22,7 +22,7 @@ export class App {
   private readonly translate = inject(TranslateService);
   private readonly router = inject(Router);
   private readonly destroyRef = inject(DestroyRef);
-  readonly isLegalNotice = signal(this.router.url.startsWith('/impressum'));
+  readonly isLegalRoute = signal(this.isLegalPage(this.router.url));
 
   constructor() {
     const savedLanguage = localStorage.getItem('language');
@@ -39,7 +39,11 @@ export class App {
         takeUntilDestroyed(this.destroyRef),
       )
       .subscribe((event) => {
-        this.isLegalNotice.set(event.urlAfterRedirects.startsWith('/impressum'));
+        this.isLegalRoute.set(this.isLegalPage(event.urlAfterRedirects));
       });
+  }
+
+  private isLegalPage(url: string): boolean {
+    return url.startsWith('/impressum') || url.startsWith('/datenschutz');
   }
 }

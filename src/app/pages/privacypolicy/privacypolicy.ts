@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-privacypolicy',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './privacypolicy.html',
   styleUrl: './privacypolicy.scss',
 })

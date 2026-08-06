@@ -149,10 +149,112 @@
             },
             "date": "Last updated: August 2026"
         },
+        "privacy": {
+            "title": "Privacy Policy",
+            "common": {
+                "furtherInformation": "Further information:",
+                "updated": "Last updated: August 2026",
+                "source": "General legal text based on:"
+            },
+            "overview": {
+                "title": "1. Privacy at a glance",
+                "generalTitle": "General information",
+                "generalText": "The following information provides an overview of what happens to your personal data when you visit this website, including its project subdomains. Personal data is any data that can be used to identify you personally.",
+                "collectionTitle": "Data collection on this website",
+                "responsibleQuestion": "Who is responsible for collecting data?",
+                "responsibleAnswer": "Data processing on this website is carried out by the website operator. The operator's contact details can be found under “Information about the controller”.",
+                "howQuestion": "How is your data collected?",
+                "howProvided": "Some data is collected when you provide it, for example by entering information in the contact form or by contacting the website operator by email or telephone.",
+                "howAutomatic": "Other data is collected automatically by the IT systems when you visit the website. This primarily includes technical information such as browser, operating system, time of access and anonymised access data.",
+                "purposeQuestion": "How is your data used?",
+                "purposeAnswer": "Technical data is processed to provide the website securely and without errors. Information submitted in an enquiry is used to process and respond to that enquiry. User behaviour is not analysed for advertising purposes.",
+                "rightsQuestion": "What rights do you have?",
+                "rightsAnswer": "You have the right to obtain information free of charge about the origin, recipients and purpose of your stored personal data. You may also request rectification or erasure, withdraw consent with future effect and, under certain conditions, request restriction of processing. You also have the right to lodge a complaint with the competent supervisory authority."
+            },
+            "hosting": {
+                "title": "2. Hosting",
+                "provider": "This website is hosted by Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Germany (“Hetzner”).",
+                "logs": "When the website is accessed, Hetzner processes technical access data required to deliver and secure the service. According to Hetzner, IP addresses stored in web server logs are anonymised. Apache logs are retained for seven days by default, and mail server logs are also retained for seven days.",
+                "legalBasis": "Hetzner is used on the basis of Art. 6(1)(f) GDPR. The legitimate interest lies in providing the website as reliably, securely and efficiently as possible.",
+                "linkLabel": "Hetzner Privacy Policy",
+                "processingTitle": "Data processing agreement",
+                "processingText": "A data processing agreement has been concluded for the hosting service. This agreement requires the hosting provider to process personal data only in accordance with instructions and in compliance with the GDPR."
+            },
+            "general": {
+                "title": "3. General and mandatory information",
+                "protectionTitle": "Data protection",
+                "protectionText1": "The protection of your personal data is taken seriously. Personal data is treated confidentially and in accordance with applicable data protection legislation and this Privacy Policy.",
+                "protectionText2": "Various types of personal data are processed when you use this website. This Privacy Policy explains what data is processed and for what purposes.",
+                "securityNotice": "Data transmitted over the internet, for example by email, may be subject to security vulnerabilities. Complete protection against access by third parties is not technically possible.",
+                "controllerTitle": "Information about the controller",
+                "controllerIntro": "The controller responsible for data processing on this website is:",
+                "country": "Germany",
+                "phone": "Telephone",
+                "email": "Email",
+                "controllerDefinition": "The controller is the natural or legal person who, alone or jointly with others, determines the purposes and means of processing personal data.",
+                "retentionTitle": "Retention period",
+                "retentionText": "Unless a more specific period is stated, personal data is retained only for as long as the relevant processing purpose continues to apply. Data will be erased following a legitimate request for erasure or withdrawal of consent unless lawful grounds or statutory retention obligations require continued storage.",
+                "legalBasesTitle": "Legal bases for processing",
+                "legalBasesText": "Where you have given consent, processing is based on Art. 6(1)(a) GDPR. Where processing is necessary for a contract or pre-contractual steps, Art. 6(1)(b) GDPR applies. Legal obligations are based on Art. 6(1)(c) GDPR, and legitimate interests on Art. 6(1)(f) GDPR. The applicable legal basis is described in the relevant sections below.",
+                "recipientsTitle": "Recipients of personal data",
+                "recipientsText": "Personal data is disclosed only where this is necessary for a contract, required by law, permitted by a legitimate interest or supported by another legal basis. Processors are used only on the basis of a valid data processing agreement.",
+                "withdrawalTitle": "Withdrawal of consent",
+                "withdrawalText": "You may withdraw consent at any time with future effect. The lawfulness of processing carried out before the withdrawal remains unaffected.",
+                "objectionTitle": "Right to object under Art. 21 GDPR",
+                "objectionText1": "WHERE PROCESSING IS BASED ON ART. 6(1)(E) OR (F) GDPR, YOU HAVE THE RIGHT TO OBJECT AT ANY TIME, ON GROUNDS RELATING TO YOUR PARTICULAR SITUATION, TO THE PROCESSING OF YOUR PERSONAL DATA. THE DATA WILL THEN NO LONGER BE PROCESSED UNLESS COMPELLING LEGITIMATE GROUNDS CAN BE DEMONSTRATED THAT OVERRIDE YOUR INTERESTS, RIGHTS AND FREEDOMS, OR PROCESSING IS REQUIRED FOR THE ESTABLISHMENT, EXERCISE OR DEFENCE OF LEGAL CLAIMS.",
+                "objectionText2": "WHERE PERSONAL DATA IS PROCESSED FOR DIRECT MARKETING, YOU MAY OBJECT TO THAT PROCESSING AT ANY TIME. THE DATA WILL THEN NO LONGER BE USED FOR DIRECT MARKETING.",
+                "complaintTitle": "Right to lodge a complaint",
+                "complaintText": "In the event of an infringement of the GDPR, data subjects have the right to lodge a complaint with a supervisory authority, particularly in the Member State of their habitual residence, place of work or the place of the alleged infringement.",
+                "portabilityTitle": "Right to data portability",
+                "portabilityText": "You have the right to receive data processed automatically on the basis of consent or a contract in a commonly used, machine-readable format or, where technically feasible, to have it transmitted to another controller.",
+                "accessTitle": "Access, rectification and erasure",
+                "accessText": "Within the scope of applicable law, you have the right to obtain information free of charge about your stored personal data and, where applicable, to request rectification or erasure.",
+                "restrictionTitle": "Right to restriction of processing",
+                "restrictionIntro": "You may request restriction of the processing of your personal data, particularly where:",
+                "restrictionItems": {
+                    "accuracy": "You contest the accuracy of stored data, for the duration of verification.",
+                    "unlawful": "The processing is unlawful and you request restriction instead of erasure.",
+                    "claims": "The data is no longer needed, but you require it for the establishment, exercise or defence of legal claims.",
+                    "objection": "You have objected under Art. 21(1) GDPR and the balancing of interests has not yet been completed."
+                },
+                "restrictionEnd": "Restricted data may, apart from storage, be processed only with consent, for legal claims, to protect the rights of others or for important public interests.",
+                "encryptionTitle": "SSL and TLS encryption",
+                "encryptionText": "This website uses SSL or TLS encryption to protect confidential content. An encrypted connection can be identified by “https://” and the padlock icon in the browser's address bar."
+            },
+            "communication": {
+                "title": "4. Data collection and communication",
+                "logsTitle": "Server log files",
+                "logsText": "The hosting provider automatically collects and stores technical information in server log files. This may include the requested domain and file, time and duration of the request, HTTP status, transferred data volume, referrer, and browser and operating system information. According to Hetzner, IP addresses are stored in anonymised form. Contact form contents are not stored in access logs.",
+                "logsLegalBasis": "Processing is based on Art. 6(1)(f) GDPR. The legitimate interest lies in the technically correct presentation, stability and security of the website.",
+                "formTitle": "Contact form",
+                "formTransfer": "When you submit an enquiry through the contact form, your name, email address, message and confirmation of the privacy information are processed in order to handle the enquiry. The information is transmitted over an encrypted connection to a PHP script on the Hetzner web hosting service and then sent to the website operator by email.",
+                "formStorage": "The form data is not additionally stored in a dedicated database or application log file. It does, however, remain in the email mailbox until deleted. If a technical delivery error occurs, only a general error message is logged without the name, email address or message content.",
+                "formLegalBasis": "Processing is based on Art. 6(1)(b) GDPR where the enquiry relates to a contract or pre-contractual steps. In all other cases, it is based on the legitimate interest in effectively handling incoming enquiries under Art. 6(1)(f) GDPR or, where requested, your consent under Art. 6(1)(a) GDPR.",
+                "formDeletion": "The data is erased once the enquiry has been fully dealt with and no statutory retention obligations or other lawful grounds require continued storage.",
+                "directTitle": "Enquiries by email or telephone",
+                "directText": "If you contact the website operator by email or telephone, the personal data you provide will be processed to handle and respond to your enquiry. The legal bases and retention periods correspond to those stated above for the contact form.",
+                "emailServiceTitle": "Email service",
+                "emailServiceText": "A Microsoft email mailbox (Hotmail/Outlook) is used to receive and process contact enquiries. Microsoft may therefore process the sender address, metadata and content of the message. Further information:",
+                "microsoftLink": "Microsoft Privacy Statement"
+            },
+            "external": {
+                "title": "5. External content used by the project demos",
+                "intro": "This Privacy Policy also applies to the project subdomains pokedex.tobias-illner.de and sharkie.tobias-illner.de. When external content is retrieved, the provider technically receives information such as the IP address, request time and browser information. The content is embedded on the basis of Art. 6(1)(f) GDPR; the legitimate interest lies in providing the displayed portfolio projects in a functional form.",
+                "pokeApiText": "The Pokédex demo retrieves Pokémon data directly from pokeapi.co. Further information:",
+                "githubTitle": "GitHub content",
+                "githubText": "Pokémon artwork is loaded through raw.githubusercontent.com, a GitHub service. Further information:",
+                "githubLink": "GitHub General Privacy Statement",
+                "cdnText": "The Pokédex demo currently loads a font through fonts.cdnfonts.com and a JavaScript library through cdnjs.cloudflare.com. The browser establishes a connection to the respective servers. Further information about cdnjs:",
+                "cloudflareLink": "Cloudflare Privacy Policy",
+                "localFontsTitle": "Locally hosted fonts",
+                "localFontsText": "The fonts used by the portfolio and the Sharkie demo are hosted locally on the website's Hetzner webspace. No connection is made to Google Fonts, fonts.googleapis.com or fonts.gstatic.com."
+            }
+        },
         "footer" : {
             "title": "Fullstack Developer",
             "ort": "Brunswick Germany",
-            "legal": "Legal Notice"
+            "legal": "Legal Notice",
+            "privacy": "Privacy Policy"
         }
     }
 }

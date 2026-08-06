@@ -19,7 +19,7 @@
     <a routerLink="/" fragment="skills">{{ 'app.nav.skills' | translate }}</a>
     <a routerLink="/" fragment="projects">{{ 'app.nav.projects' | translate }}</a>
   </div>
-  <a class="nav-logo" routerLink="/" fragment="home">
+  <a class="nav-logo" routerLink="/" (click)="scrollToTop()">
     <img class="logo-default" src="icons/Logo-weiß.png" alt="Tobias Illner" />
     <img class="logo-hover" src="icons/Logo-outline.png" alt="" />
   </a>
