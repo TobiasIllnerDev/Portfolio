@@ -1,5 +1,5 @@
 <section class="nav-section">
-  <div class="nav-div">
+  <div class="nav-div" id="mobile-navigation" [class.nav-div--open]="menuOpen()">
     <label for="language-checkbox" class="language-switch">
       <input
         type="checkbox"
@@ -15,12 +15,34 @@
       <span class="switch-background" aria-hidden="true"></span>
     </label>
 
-    <a routerLink="/" fragment="about-me">{{ 'app.nav.about' | translate }}</a>
-    <a routerLink="/" fragment="skills">{{ 'app.nav.skills' | translate }}</a>
-    <a routerLink="/" fragment="projects">{{ 'app.nav.projects' | translate }}</a>
+    <a routerLink="/" fragment="about-me" (click)="closeMenu()">{{ 'app.nav.about' | translate }}</a>
+    <a routerLink="/" fragment="skills" (click)="closeMenu()">{{ 'app.nav.skills' | translate }}</a>
+    <a routerLink="/" fragment="projects" (click)="closeMenu()">{{ 'app.nav.projects' | translate }}</a>
   </div>
-  <a class="nav-logo" routerLink="/" (click)="scrollToTop()">
-    <img class="logo-default" src="icons/Logo-weiß.png" alt="Tobias Illner" />
-    <img class="logo-hover" src="icons/Logo-outline.png" alt="" />
+  <a class="nav-logo" routerLink="/" (click)="scrollToTop(); closeMenu()">
+    <img class="logo-default logo-desktop" src="icons/Logo-weiß.png" alt="Tobias Illner" />
+    <img class="logo-hover logo-desktop" src="icons/Logo-outline.png" alt="" />
+    <img
+      class="logo-default logo-mobile"
+      src="icons/Logo-weiß-nurbuchstaben.png"
+      alt="Tobias Illner"
+    />
+    <img
+      class="logo-hover logo-mobile"
+      src="icons/Logo-outline-nurbuchstaben.png"
+      alt=""
+    />
   </a>
+  <button
+    class="menu-button"
+    type="button"
+    aria-controls="mobile-navigation"
+    [attr.aria-expanded]="menuOpen()"
+    [attr.aria-label]="menuOpen() ? 'Menü schließen' : 'Menü öffnen'"
+    (click)="toggleMenu()"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </section>

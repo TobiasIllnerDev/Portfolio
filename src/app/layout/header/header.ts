@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, HostListener, inject, signal } from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
 
@@ -10,6 +10,7 @@ import { RouterLink } from '@angular/router';
 })
 export class Header {
   readonly translate = inject(TranslateService);
+  readonly menuOpen = signal(false);
 
   changeLanguage(event: Event): void {
     const isGerman = (event.target as HTMLInputElement).checked;
@@ -22,5 +23,18 @@ export class Header {
 
   scrollToTop(): void {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }
+
+  toggleMenu(): void {
+    this.menuOpen.update((isOpen) => !isOpen);
+  }
+
+  closeMenu(): void {
+    this.menuOpen.set(false);
+  }
+
+  @HostListener('document:keydown.escape')
+  closeMenuWithEscape(): void {
+    this.closeMenu();
   }
 }

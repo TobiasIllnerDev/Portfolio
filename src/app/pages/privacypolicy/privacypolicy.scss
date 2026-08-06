@@ -118,3 +118,24 @@
     }
   }
 }
+
+@media (max-width: 360px) {
+  .privacy-page {
+    width: calc(100% - 24px);
+  }
+
+  .privacy-heading h1 {
+    font-size: 1.75rem;
+  }
+
+  .privacy-content {
+    :where(h2) {
+      font-size: 1.2rem;
+      overflow-wrap: anywhere;
+    }
+
+    :where(.privacy-emphasis) {
+      padding: 14px;
+    }
+  }
+}

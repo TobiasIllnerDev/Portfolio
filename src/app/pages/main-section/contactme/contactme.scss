@@ -406,3 +406,34 @@
     }
   }
 }
+
+@media (max-width: 360px) {
+  .contact {
+    padding-inline: 16px;
+
+    &__content h2 {
+      font-size: 2.25rem;
+      overflow-wrap: anywhere;
+    }
+  }
+
+  .contact-form {
+    &__field {
+      padding-inline: 12px;
+    }
+
+    &__consent {
+      gap: 10px;
+
+      label {
+        font-size: 0.875rem;
+        overflow-wrap: anywhere;
+      }
+    }
+  }
+
+  .contact-dialog {
+    width: calc(100% - 24px);
+    padding: 24px 18px;
+  }
+}

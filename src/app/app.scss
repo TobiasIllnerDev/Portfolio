@@ -25,3 +25,10 @@
   flex: 1;
 }
 
+@media (max-width: 700px) {
+  .background-color-class {
+    height: auto;
+    min-height: 100svh;
+  }
+}
+

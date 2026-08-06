@@ -9,7 +9,8 @@ import { RouterLink } from '@angular/router';
   styleUrl: './footer.scss',
 })
 export class Footer {
-   readonly translate = inject(TranslateService);
+  readonly translate = inject(TranslateService);
+  readonly currentYear = new Date().getFullYear();
 
   changeLanguage(event: Event): void {
     const isGerman = (event.target as HTMLInputElement).checked;

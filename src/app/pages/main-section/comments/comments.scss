@@ -270,4 +270,38 @@ $transition-duration: 300ms;
       }
     }
   }
+
+  @media (max-width: 400px) {
+    padding: 56px 0;
+
+    .comments-container h2 {
+      padding-inline: 16px;
+      font-size: 1.4rem;
+      overflow-wrap: anywhere;
+    }
+
+    .comments-slider {
+      --card-width: calc(100vw - 24px);
+      --card-gap: 16px;
+
+      &__navigation {
+        gap: 14px;
+      }
+
+      &__dots {
+        gap: 12px;
+      }
+    }
+
+    .comment-card {
+      min-height: 330px;
+      padding: 42px 18px 24px;
+
+      &__author {
+        gap: 10px;
+        font-size: 0.8rem;
+        overflow-wrap: anywhere;
+      }
+    }
+  }
 }
