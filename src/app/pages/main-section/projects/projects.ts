@@ -31,7 +31,7 @@ export class Projects {
       descriptionKey: 'app.projects.items.pokedex.description',
       image: 'images/Pokedex.png',
       githubUrl: 'https://github.com/TobiasIllnerDev/pokedex',
-      liveUrl: 'https://tobiasillner.developerakademie.net/pokedex/index.html',
+      liveUrl: 'https://pokedex.tobias-illner.de/',
       technologies: [
         { name: 'JavaScript', icon: 'icons/javascript.svg' },
         { name: 'HTML', icon: 'icons/html.svg' },
@@ -44,7 +44,7 @@ export class Projects {
       descriptionKey: 'app.projects.items.sharkie.description',
       image: 'images/Sharki-projekt.png',
       githubUrl: 'https://github.com/TobiasIllnerDev/Sharkie',
-      liveUrl: 'https://tobiasillner.developerakademie.net/sharkie/index.html',
+      liveUrl: 'https://sharkie.tobias-illner.de/',
       technologies: [
         { name: 'JavaScript', icon: 'icons/javascript.svg' },
         { name: 'HTML', icon: 'icons/html.svg' },
