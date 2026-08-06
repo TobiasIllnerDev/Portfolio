@@ -17,7 +17,15 @@
       </p>
     </div>
 
-    <form class="contact-form" id="contact-form" novalidate (submit)="sendMessage($event)">
+    <form
+      #contactForm
+      class="contact-form"
+      id="contact-form"
+      novalidate
+      (input)="updateFormValidity(contactForm)"
+      (change)="updateFormValidity(contactForm)"
+      (submit)="sendMessage($event)"
+    >
       <div class="contact-form__honeypot" aria-hidden="true">
         <label for="contact-website">Website</label>
         <input
@@ -31,6 +39,7 @@
       <div class="contact-form__field">
         <label for="contact-name">{{ 'app.contact.form.name.label' | translate }}</label>
         <input
+          #nameInput
           id="contact-name"
           name="name"
           type="text"
@@ -41,10 +50,11 @@
           maxlength="100"
           required
           (input)="clearFieldError('name')"
+          (blur)="markFieldTouched('name')"
         />
         <p
           class="contact-form__error"
-          [class.contact-form__error--visible]="invalidField() === 'name'"
+          [class.contact-form__error--visible]="isFieldInvalid('name', nameInput)"
           id="name-error"
         >
           {{ 'app.contact.form.name.error' | translate }}
@@ -54,6 +64,7 @@
       <div class="contact-form__field">
         <label for="contact-email">{{ 'app.contact.form.email.label' | translate }}</label>
         <input
+          #emailInput
           id="contact-email"
           name="email"
           type="email"
@@ -63,10 +74,11 @@
           maxlength="254"
           required
           (input)="clearFieldError('email')"
+          (blur)="markFieldTouched('email')"
         />
         <p
           class="contact-form__error"
-          [class.contact-form__error--visible]="invalidField() === 'email'"
+          [class.contact-form__error--visible]="isFieldInvalid('email', emailInput)"
           id="email-error"
         >
           {{
@@ -80,6 +92,7 @@
       <div class="contact-form__field">
         <label for="contact-message">{{ 'app.contact.form.message.label' | translate }}</label>
         <textarea
+          #messageInput
           id="contact-message"
           name="message"
           rows="4"
@@ -89,10 +102,11 @@
           maxlength="5000"
           required
           (input)="clearFieldError('message')"
+          (blur)="markFieldTouched('message')"
         ></textarea>
         <p
           class="contact-form__error"
-          [class.contact-form__error--visible]="invalidField() === 'message'"
+          [class.contact-form__error--visible]="isFieldInvalid('message', messageInput)"
           id="message-error"
         >
           {{ 'app.contact.form.message.error' | translate }}
@@ -102,11 +116,13 @@
       <div class="contact-form__privacy">
         <div class="contact-form__consent">
           <input
+            #privacyPolicy
             id="privacy-policy"
             name="privacyPolicy"
             type="checkbox"
             aria-describedby="privacy-error"
             required
+            (blur)="markPrivacyTouched()"
           />
           <label for="privacy-policy">
             {{ 'app.contact.form.privacy.beforeLink' | translate }}
@@ -116,12 +132,16 @@
             {{ 'app.contact.form.privacy.afterLink' | translate }}
           </label>
         </div>
-        <p class="contact-form__error" id="privacy-error">
+        <p
+          class="contact-form__error"
+          [class.contact-form__error--visible]="privacyTouched() && !privacyPolicy.checked"
+          id="privacy-error"
+        >
           {{ 'app.contact.form.privacy.error' | translate }}
         </p>
       </div>
 
-      <button class="submit" type="submit" [disabled]="isSending()">
+      <button class="submit" type="submit" [disabled]="!isFormValid() || isSending()">
         <span>
           {{ (isSending() ? 'app.contact.form.sending' : 'app.contact.form.submit') | translate }}
         </span>

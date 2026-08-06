@@ -105,6 +105,16 @@
         color: rgba(255, 255, 255, 0.8);
         opacity: 1;
       }
+
+      &:autofill,
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus {
+        caret-color: #ffffff;
+        -webkit-text-fill-color: #ffffff;
+        -webkit-box-shadow: 0 0 0 1000px $b-color inset;
+        box-shadow: 0 0 0 1000px $b-color inset;
+      }
     }
 
     input {
@@ -136,10 +146,6 @@
     &--visible {
       visibility: visible;
     }
-  }
-
-  & > :has(:user-invalid) > &__error {
-    visibility: visible;
   }
 
   &__privacy {
@@ -238,7 +244,7 @@
       color 180ms ease,
       border-color 180ms ease;
 
-    &:hover {
+    &:not(:disabled):hover {
       color: $button-green;
       border-color: $button-green;
       background-color: rgba($button-green, 0.06);
@@ -250,8 +256,8 @@
     }
 
     &:disabled {
-      cursor: wait;
-      opacity: 0.65;
+      cursor: not-allowed;
+      opacity: 0.45;
     }
   }
 }

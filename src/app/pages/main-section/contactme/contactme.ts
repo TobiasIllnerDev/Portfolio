@@ -4,6 +4,8 @@ import { RouterLink } from '@angular/router';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { finalize, timeout } from 'rxjs';
 
+type ContactField = 'name' | 'email' | 'message';
+
 @Component({
   selector: 'app-contactme',
   imports: [TranslatePipe, RouterLink],
@@ -16,8 +18,15 @@ export class Contactme {
 
   readonly isSending = signal(false);
   readonly submitState = signal<'idle' | 'success' | 'error'>('idle');
-  readonly invalidField = signal<'name' | 'email' | 'message' | null>(null);
+  readonly invalidField = signal<ContactField | null>(null);
   readonly emailDomainInvalid = signal(false);
+  readonly isFormValid = signal(false);
+  readonly touchedFields = signal<Record<ContactField, boolean>>({
+    name: false,
+    email: false,
+    message: false,
+  });
+  readonly privacyTouched = signal(false);
 
   @ViewChild('successDialog')
   private successDialog?: ElementRef<HTMLDialogElement>;
@@ -37,7 +46,8 @@ export class Contactme {
 
     const form = event.currentTarget as HTMLFormElement;
 
-    if (!form.reportValidity() || this.isSending()) {
+    if (!form.checkValidity() || this.isSending()) {
+      this.markAllFieldsTouched();
       return;
     }
 
@@ -69,6 +79,8 @@ export class Contactme {
           }
 
           form.reset();
+          this.isFormValid.set(false);
+          this.resetTouchedFields();
           this.submitState.set('success');
           this.successDialog?.nativeElement.showModal();
         },
@@ -86,7 +98,29 @@ export class Contactme {
       });
   }
 
-  clearFieldError(field: 'name' | 'email' | 'message'): void {
+  updateFormValidity(form: HTMLFormElement): void {
+    this.isFormValid.set(form.checkValidity());
+  }
+
+  markFieldTouched(field: ContactField): void {
+    this.touchedFields.update((fields) => ({ ...fields, [field]: true }));
+  }
+
+  markPrivacyTouched(): void {
+    this.privacyTouched.set(true);
+  }
+
+  isFieldInvalid(
+    field: ContactField,
+    control: HTMLInputElement | HTMLTextAreaElement,
+  ): boolean {
+    return (
+      this.invalidField() === field ||
+      (this.touchedFields()[field] && !control.validity.valid)
+    );
+  }
+
+  clearFieldError(field: ContactField): void {
     if (this.invalidField() === field) {
       this.invalidField.set(null);
     }
@@ -94,5 +128,15 @@ export class Contactme {
     if (field === 'email') {
       this.emailDomainInvalid.set(false);
     }
+  }
+
+  private markAllFieldsTouched(): void {
+    this.touchedFields.set({ name: true, email: true, message: true });
+    this.privacyTouched.set(true);
+  }
+
+  private resetTouchedFields(): void {
+    this.touchedFields.set({ name: false, email: false, message: false });
+    this.privacyTouched.set(false);
   }
 }
