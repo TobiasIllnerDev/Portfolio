@@ -253,8 +253,7 @@
         "footer" : {
             "title": "Fullstack Developer",
             "ort": "Brunswick Germany",
-            "legal": "Legal Notice",
-            "privacy": "Privacy Policy"
+            "legal": "Legal Notice"
         }
     }
 }

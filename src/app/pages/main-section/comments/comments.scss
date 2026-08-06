@@ -1,5 +1,6 @@
 @use "../../../../styles/variables" as *;
-$transition-duration: 300ms;
+$transition-duration: 520ms;
+$transition-easing: cubic-bezier(0.22, 1, 0.36, 1);
 
 .comments-section {
   display: flex;
@@ -82,19 +83,26 @@ $transition-duration: 300ms;
 
       width: max-content;
       margin-left: 50%;
+      will-change: transform;
 
-      transform: translateX(
+      transform: translate3d(
         calc(
           -1 * var(--track-index) *
             (var(--card-width) + var(--card-gap)) -
             var(--card-width) / 2
-        )
+        ),
+        0,
+        0
       );
 
-      transition: transform $transition-duration ease-in-out;
+      transition: transform $transition-duration $transition-easing;
 
       &--without-transition {
         transition: none;
+
+        .comment-card {
+          transition: none;
+        }
       }
     }
 
@@ -189,12 +197,13 @@ $transition-duration: 300ms;
 
     visibility: hidden;
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.97);
+    will-change: opacity, transform;
 
     transition:
-      opacity $transition-duration ease-in-out,
-      transform $transition-duration ease-in-out,
-      background-color $transition-duration ease-in-out,
+      opacity $transition-duration $transition-easing,
+      transform $transition-duration $transition-easing,
+      background-color $transition-duration $transition-easing,
       visibility 0s linear $transition-duration;
 
     &--visible {

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 interface Comment {
@@ -16,6 +16,7 @@ interface Comment {
 })
 export class Comments {
   readonly translate = inject(TranslateService);
+  private readonly changeDetectorRef = inject(ChangeDetectorRef);
 
   changeLanguage(event: Event): void {
     const isGerman = (event.target as HTMLInputElement).checked;
@@ -99,10 +100,19 @@ export class Comments {
       return;
     }
 
+    const commentCount = this.comments.length;
+    const forwardDistance =
+      (index - this.activeIndex + commentCount) % commentCount;
+    const backwardDistance = forwardDistance - commentCount;
+    const shortestDistance =
+      forwardDistance <= Math.abs(backwardDistance)
+        ? forwardDistance
+        : backwardDistance;
+
     this.isAnimating = true;
     this.isTransitionEnabled = true;
     this.activeIndex = index;
-    this.trackIndex = index + 2;
+    this.trackIndex += shortestDistance;
   }
 
   handleTransitionEnd(event: TransitionEvent): void {
@@ -112,13 +122,24 @@ export class Comments {
 
     const firstCloneIndex = 1;
     const lastCloneIndex = this.comments.length + 2;
+    let resetIndex: number | null = null;
 
     if (this.trackIndex === firstCloneIndex) {
-      this.isTransitionEnabled = false;
-      this.trackIndex = this.comments.length + 1;
+      resetIndex = this.comments.length + 1;
     } else if (this.trackIndex === lastCloneIndex) {
+      resetIndex = 2;
+    }
+
+    if (resetIndex !== null) {
       this.isTransitionEnabled = false;
-      this.trackIndex = 2;
+      this.trackIndex = resetIndex;
+      this.changeDetectorRef.detectChanges();
+
+      // Commit the transition-free clone reset before enabling the next slide.
+      void (event.currentTarget as HTMLElement).offsetWidth;
+
+      this.isTransitionEnabled = true;
+      this.changeDetectorRef.detectChanges();
     }
 
     this.isAnimating = false;
