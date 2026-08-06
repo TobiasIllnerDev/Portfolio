@@ -39,10 +39,24 @@ $transition-duration: 300ms;
     &__viewport {
       position: relative;
 
-      width: min(100%, 1440px);
+      width: 100%;
       margin-inline: auto;
       padding: 35px 0;
       overflow: hidden;
+      -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        black 12%,
+        black 88%,
+        transparent 100%
+      );
+      mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        black 12%,
+        black 88%,
+        transparent 100%
+      );
 
       &::before {
         content: "“";
@@ -245,6 +259,9 @@ $transition-duration: 300ms;
       --card-gap: 24px;
 
       &__viewport {
+        -webkit-mask-image: none;
+        mask-image: none;
+
         &::before {
           top: 5px;
           left: calc(50% - var(--card-width) / 2 + 12px);
