@@ -1,59 +1,74 @@
-# Portfolio
+# Portfolio – Tobias Illner
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.7.
+My personal developer portfolio, built as a responsive single-page application with Angular. The website introduces me, showcases my skills and selected projects, and provides a direct way to get in touch.
 
-## Development server
+[View Live Demo](https://tobias-illner.de/) · [GitHub Profile](https://github.com/TobiasIllnerDev) · [LinkedIn](https://www.linkedin.com/in/tobias-illner/)
 
-To start a local development server, run:
+![Portfolio preview](public/images/Projekt.png)
 
-```bash
-ng serve
-```
+## Features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Responsive design for desktop, tablet, and mobile devices
+- Language switching between English and German
+- Browser-based persistence of the selected language
+- Overview of my skills and technologies
+- Interactive project showcase with GitHub links and live demos
+- Contact form with validation and status messages
+- Dedicated legal notice and privacy policy pages
+- Smooth navigation between the different sections
 
-## Code scaffolding
+## Technologies
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Angular 22
+- TypeScript
+- HTML5
+- SCSS
+- RxJS
+- ngx-translate
+- PHP for contact form delivery
+- Vitest for unit testing
 
-```bash
-ng generate component component-name
-```
+## Local Setup
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+A recent version of [Node.js](https://nodejs.org/) and npm is required.
 
 ```bash
-ng test
+git clone https://github.com/TobiasIllnerDev/Portfolio.git
+cd Portfolio
+npm install
+npm start
 ```
 
-## Running end-to-end tests
+The application will then be available at [http://localhost:4200](http://localhost:4200).
 
-For end-to-end (e2e) testing, run:
+> The frontend can be viewed completely in a local environment. Sending messages through the contact form requires a PHP-enabled server environment.
 
-```bash
-ng e2e
+## Available Scripts
+
+| Command | Description |
+| --- | --- |
+| `npm start` | Starts the local development server and opens the browser |
+| `npm run build` | Creates an optimized production build in the `dist/` directory |
+| `npm run watch` | Automatically creates a new development build when files change |
+| `npm test` | Runs the unit tests with Vitest |
+
+## Project Structure
+
+```text
+src/
+├── app/
+│   ├── layout/          # Header and footer
+│   └── pages/           # Portfolio sections and legal pages
+├── styles/              # Global variables and styles
+└── styles.scss          # Global stylesheet
+public/
+├── api/                 # PHP endpoint for the contact form
+├── fonts/               # Locally hosted fonts
+├── i18n/                # English and German translations
+├── icons/               # Icons and technology logos
+└── images/              # Images and project previews
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Author
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Developed by [Tobias Illner](https://github.com/TobiasIllnerDev).
